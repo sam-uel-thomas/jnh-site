@@ -1,0 +1,8 @@
+<svg width="300" height="10" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="stitch" width="10" height="10" patternUnits="userSpaceOnUse">
+            <line x1="2" y1="0" x2="10" y2="0" style="stroke:#FF4A29;stroke-width:1; stroke-dasharray:6,4"/>
+        </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#stitch)" />
+</svg>
