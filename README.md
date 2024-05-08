@@ -1,4 +1,4 @@
- Portfolio site for artist and fashion designer Jonah Davies.
+## Portfolio site for artist and fashion designer Jonah Davies.
 ## Getting Started
 
 First, run the development server:
