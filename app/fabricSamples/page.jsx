@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
-import ImageCard from '../components/imageCard'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ImageCard from '../components/ImageCard'
 import Link from 'next/link'
 import fabricSamplesData from './fabricSamplesData'
 
@@ -15,7 +15,7 @@ const fabricSamples = () => {
                         {fabricSamplesData.map((sample, index) => (
                             <Link href={`/fabricSamples/${index}`} key={index}>
                                 <ImageCard src={sample.src} alt={sample.alt} title={sample.title} />
-                                <span className='text-black'>{index+1}</span>
+                                <span className='text-black'>{index}</span>
                             </Link>
                         ))}
                     </div>

@@ -1,8 +1,8 @@
 import React from 'react'
 import fabricSamplesData from '../fabricSamplesData'
 import ImageCard from '../../components/ImageCard'
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import Link from 'next/link'
 
 export default function page({ params }) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectScroll from './projectScroll';
-import Navbar from './navbar';
-import Footer from './footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const LandingPage = () => {
     return (

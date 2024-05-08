@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
-import ImageCard from '../components/imageCard'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ImageCard from '../components/ImageCard'
 
 const teamsProjectData = [];
 
