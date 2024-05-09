@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectScroll from './projectScroll';
+import ProjectScroll from './ProjectScroll';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
