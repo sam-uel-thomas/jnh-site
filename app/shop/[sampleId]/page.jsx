@@ -9,6 +9,15 @@ import Link from 'next/link'
 export default function Page({ params }) {
     const sample = shopData[Number(params.sampleId)];
     const [photoIndex, setPhotoIndex] = useState(0);
+    
+    useEffect(() => {
+        shopData.forEach(sample => {
+            sample.photos.forEach(photo => {
+                const img = new Image();
+                img.src = photo;
+            });
+        });
+    }, []);
 
     if (!sample) {
         return <h1>No fabric sample found for id {params.sampleId}</h1>;
@@ -22,14 +31,6 @@ export default function Page({ params }) {
         setPhotoIndex((prevIndex) => (prevIndex - 1 + sample.photos.length) % sample.photos.length);
     };
 
-    useEffect(() => {
-        shopData.forEach(sample => {
-            sample.photos.forEach(photo => {
-                const img = new Image();
-                img.src = photo;
-            });
-        });
-    }, []);
 
     return (
         <>
