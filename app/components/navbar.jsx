@@ -41,17 +41,11 @@ export default function Navbar() {
                         /> */}
                     </Link>
                 </li>
-                <li className='hover:scale-105 transition-transform duration-500 ease-in-out'>
+                {/* <li className='hover:scale-105 transition-transform duration-500 ease-in-out'>
                     <Link href="/contact">
                         <span className={navLinkClasses}>CONTACT</span>
-                        {/* <img 
-                            src={contactImg} 
-                            onMouseOver={() => setContactImg('/links/contact/jnhContactUnderline.png')} 
-                            onMouseOut={() => setContactImg('/links/contact/jnhContact.png')}
-                            className='w-auto h-8'
-                        /> */}
                     </Link>
-                </li>
+                </li> */}
                 <li className='hover:scale-105 transition-transform duration-500 ease-in-out'>
                     <Link href="https://www.instagram.com/jonahdavies.2/" target="_blank" rel="noopener noreferrer" className={navLinkClasses}>
                         <span className={navLinkClasses}>INSTAGRAM</span>

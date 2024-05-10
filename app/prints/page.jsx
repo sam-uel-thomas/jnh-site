@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
+import ProjectScroll from '../components/ProjectScroll'
 import printsData from './printsData'
 import Link from 'next/link'
 
@@ -24,6 +25,9 @@ const prints = () => {
                             <p>No data available</p>
                         )}
                     </div>
+                </div>
+                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
+                    <ProjectScroll/>
                 </div>
             </div>
             <Footer />

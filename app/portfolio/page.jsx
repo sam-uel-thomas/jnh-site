@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ProjectScroll from '../components/ProjectScroll'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -38,6 +39,9 @@ const Portfolio = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
+                    <ProjectScroll/>
                 </div>
             </div>
             <Footer />
