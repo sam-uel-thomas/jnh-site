@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link'
 
-export default function page({ params }) {
+export default function Page({ params }) {
     const sample = shopData[Number(params.sampleId)];
     const [photoIndex, setPhotoIndex] = useState(0);
 
