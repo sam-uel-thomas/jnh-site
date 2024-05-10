@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="absolute bottom-4 left-0 w-full h-auto flex items-center">
                 <img src="/jnhFooterShape.png" alt="JNH Rectangle" className="absolute top-0 left-0 w-full h-full object-cover z-0" />
                 <div className="z-20 flex flex-row items-center space-x-4 py-4 px-4 md:px-16 justify-center">
-                    <a href="https://www.instagram.com/___j_n_h___/" target="_blank" rel="noopener noreferrer" className='h-4 w-4 flex items-center'>
+                    <a href="https://www.instagram.com/jonahdavies.2/" target="_blank" rel="noopener noreferrer" className='h-4 w-4 flex items-center'>
                         <FontAwesomeIcon icon={faInstagram} color="white" />
                     </a>
                     <a href="https://www.pinterest.co.uk/jonahdavies660/" target="_blank" rel="noopener noreferrer" className='h-4 w-4 flex items-center'>
