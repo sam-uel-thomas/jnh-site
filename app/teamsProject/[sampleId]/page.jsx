@@ -1,5 +1,5 @@
 import React from 'react'
-import teamsProjectData from '../teamsProjectData'
+import teamsProjectData from '../teamProjectData'
 import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
