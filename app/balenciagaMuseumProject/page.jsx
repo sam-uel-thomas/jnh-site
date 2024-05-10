@@ -15,7 +15,7 @@ const balenciagaMuseumProject = () => {
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-12 p-6 md:p-16">
                         {balenciagaMuseumProjectData.length > 0 ? (
                             balenciagaMuseumProjectData.map((sample, index) => (
-                                <Link href={`/fabricSamples/${index}`} key={index}>
+                                <Link href={`/balenciagaMuseumProject/${index}`} key={index}>
                                     <div className="w-2/3 h-auto">
                                         <ImageCard src={sample.src} alt={sample.alt} title={index+1} />
                                     </div>

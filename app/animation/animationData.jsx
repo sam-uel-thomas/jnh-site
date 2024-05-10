@@ -6,7 +6,7 @@ const animationData = [
     {src : "/animation/5.GIF", alt: "animation 5", title: "Martha"},
     {src : "/animation/6.GIF", alt: "animation 6", title: "Clive"},
     {src : "/animation/7.GIF", alt: "animation 7", title: "Pam"},
-    {src : "/animation/jnhRunning.GIF", alt: "animation 8", title: "Luisa"},
+    {src : "/animation/8.GIF", alt: "animation 8", title: "Luisa"},
 ];
 
 export default animationData;1
