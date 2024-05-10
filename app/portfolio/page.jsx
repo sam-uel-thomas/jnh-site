@@ -8,10 +8,10 @@ import Image from 'next/image'
 const Portfolio = () => {
     return (
         <div>
-            <div className='bg-white flex flex-col min-h-screen'>
+            <div className='bg-white flex flex-col justify-between min-h-screen'>
                 <Navbar />
-                <div className='justify-center items-center w-full pt-8 md:pt-16 mb-5 z-10'>
-                    <div className="relative flex flex-col items-center w-full pt-16 md:pt-8 mb-5 z-10">
+                <div className='w-full mb-5 z-10'>
+                    <div className="relative flex flex-col items-center w-full mb-5 z-10">
                         <div className="flex flex-col md:flex-row space-x-4 items-center">
                             <div className="w-auto h-auto relative">
                                 <Link href="/portfolio/mini.pdf">
