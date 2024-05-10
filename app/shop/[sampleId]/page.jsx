@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import shopData from '../shopData'
 import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
@@ -21,6 +21,15 @@ export default function Page({ params }) {
     const handlePrevPhoto = () => {
         setPhotoIndex((prevIndex) => (prevIndex - 1 + sample.photos.length) % sample.photos.length);
     };
+
+    useEffect(() => {
+        shopData.forEach(sample => {
+            sample.photos.forEach(photo => {
+                const img = new Image();
+                img.src = photo;
+            });
+        });
+    }, []);
 
     return (
         <>
