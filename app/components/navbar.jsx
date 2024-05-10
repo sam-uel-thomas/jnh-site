@@ -41,11 +41,11 @@ export default function Navbar() {
                         /> */}
                     </Link>
                 </li>
-                {/* <li className='hover:scale-105 transition-transform duration-500 ease-in-out'>
-                    <Link href="/contact">
-                        <span className={navLinkClasses}>CONTACT</span>
+                <li className='hover:scale-105 transition-transform duration-500 ease-in-out'>
+                    <Link href="/about">
+                        <span className={navLinkClasses}>ABOUT</span>
                     </Link>
-                </li> */}
+                </li>
                 <li className='hover:scale-105 transition-transform duration-500 ease-in-out'>
                     <Link href="https://www.instagram.com/jonahdavies.2/" target="_blank" rel="noopener noreferrer" className={navLinkClasses}>
                         <span className={navLinkClasses}>INSTAGRAM</span>
