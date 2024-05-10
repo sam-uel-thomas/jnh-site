@@ -14,7 +14,7 @@ const fabricSamples = () => {
                     <div className="grid grid-cols-1 gap-6 md:gap-12 p-6 md:p-16">
                         {fabricSamplesData.map((sample, index) => (
                             <Link href={`/fabricSamples/${index}`} key={index}>
-                                <div className="w-full h-auto">
+                                <div className="w-2/3 h-auto">
                                     <ImageCard src={sample.src} alt={sample.alt} title={index+1} />
                                 </div>
                             </Link>

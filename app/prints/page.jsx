@@ -15,7 +15,7 @@ const prints = () => {
                         {printsData.length > 0 ? (
                             printsData.map((sample, index) => (
                                 <Link href={`/prints/${index}`} key={index}>
-                                    <div className="w-1/2 h-auto">
+                                    <div className="w-2/3 h-auto">
                                         <ImageCard src={sample.src} alt={sample.alt} title={index+1} />
                                     </div>
                                 </Link>
