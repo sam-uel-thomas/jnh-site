@@ -17,12 +17,22 @@ module.exports = {
       	},
 		animation: {
 			'infinite-scroll': 'infinite-scroll 40s linear infinite',
+            'bobbing-left': 'bobbing-left 1s ease-in-out infinite',
+            'bobbing-right': 'bobbing-right 1s ease-in-out infinite',
 		},
 		keyframes: {
 			'infinite-scroll': {
 				from: { transform: 'translateX(0)' },
 				to: { transform: 'translateX(-100%)' },
-			}
+			},
+            'bobbing-left': {
+                '0%, 100%': { transform: 'translateX(0)' },
+                '50%': { transform: 'translateX(-10px)' },
+            },
+            'bobbing-right': {
+                '0%, 100%': { transform: 'translateX(0)' },
+                '50%': { transform: 'translateX(10px)' },
+            },
 		},
     },
   },

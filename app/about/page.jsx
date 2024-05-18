@@ -12,9 +12,9 @@ const Page = () => {
                         <div className="relative flex flex-col justify-center items-center w-2/3 px-32 py-12 mt-12 border-[1.5rem] border-[#FF0804]">
                                 <span className='text-4xl font-bold text-black text-left w-full mb-4'>About Me</span>
                                 <span className='text-black font-semibold text-lg'>
-                                        Hello, my name is Jonah Davies, a 20 year old undergraduate fashion student from Hastings ,East
+                                        Hello, my name is Jonah Davies, a 20 year old undergraduate fashion student from Hastings, East
                                         Sussex. I would like to possibly have a bit of your time to outline why I would be a perfect member of
-                                        your amazing business. Hard work within pressured environments come natural to me, having worked
+                                        your amazing business. Hard work within pressured environments comes naturally to me, having worked
                                         in intense environments since I was 14, having to deliver to a high level of expectation and satisfaction. I
                                         have a creative outlook on industry, often looking at tasks with an alternate perspective, whilst still
                                         delivering on brief and punctuality. Both parents are from creative backgrounds so I have been nurtured

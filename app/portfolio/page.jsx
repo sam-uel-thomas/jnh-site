@@ -22,7 +22,7 @@ const Portfolio = () => {
                                 </Link>
                             </div>
                             <div className="w-auto h-auto relative">
-                                <Link href="/portfolio/main.pdf">
+                                <Link href="/portfolio/main">
                                     <div className='hover:scale-105 transition-transform duration-500 ease-in-out flex items-center justify-center'>
                                         <Image src="/logos/portfolioShape2.png" alt="Main Portfolio" height={500} width={500} />
                                         <span className='text-black font-semibold absolute'>MAIN PORTFOLIO</span>
