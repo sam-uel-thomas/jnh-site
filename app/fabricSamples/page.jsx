@@ -9,7 +9,7 @@ import fabricSamplesData from './fabricSamplesData'
 const fabricSamples = () => {
     return (
         <div>
-            <div className='bg-white flex flex-col justify-between min-h-screen'>
+            <div className='bg-white flex flex-col justify-between min-h-screen overflow-x-hidden'>
                 <Navbar />
                 <div className="relative flex flex-col justify-end items-center w-full md:w-2/3 pt-0 md:pt-0 mb-5 z-10 pr-8 md:pl-32">
                     <div className="grid grid-cols-1 gap-6 md:gap-12 p-6 md:p-16">

@@ -9,7 +9,7 @@ import Link from 'next/link'
 const shop = () => {
     return (
         <div>
-            <div className='bg-white flex flex-col justify-between min-h-[100dvh]'>
+            <div className='bg-white flex flex-col justify-between min-h-[100dvh] overflow-x-hidden'>
                 <Navbar />
                 <div className="relative flex flex-col justify-end items-center w-full pt-0 md:pt-0 mb-5 z-10">
                     <div className="grid grid-cols-2 gap-6 md:gap-12 p-6 md:p-16 justify-center">
