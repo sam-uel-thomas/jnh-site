@@ -3,10 +3,10 @@ const shopData = [
     photos: ["/shop/bagForLifeTrouser/1.jpg", "/shop/bagForLifeTrouser/2.JPG", "/shop/bagForLifeTrouser/3.JPG"]},
 
     {src : "/shop/fencingVest/bgPicture.jpg", alt: "Shop 2", title : "Fencing Vest", description: ["- Like the shirt but black and without sleeves", "- So many lovely buttons my goodness", "- Is that a contrast welt pocket"],
-    photos: ["/shop/fencingVest/bgPicture.jpg", "/shop/fencingVest/2.JPG", "/shop/fencingVest/3.JPG", "/shop/fencingVest/4.JPG"]},
+    photos: ["/shop/fencingVest/1.jpg", "/shop/fencingVest/2.JPG", "/shop/fencingVest/3.JPG", "/shop/fencingVest/4.JPG"]},
 
     {src : "/shop/horseRiderJacket/bgPicture.jpg", alt: "Shop 3", title : "Horse Rider Jacket", description: ["- Wool looks so soft", "- Goodness I just want to stroke it", "- But not in a weird way", "- Love that contrast welt pocket"],
-    photos: ["/shop/horseRiderJacket/bgPicture.jpg", "/shop/horseRiderJacket/2.JPG", "/shop/horseRiderJacket/3.JPG", "/shop/horseRiderJacket/4.JPG"]},
+    photos: ["/shop/horseRiderJacket/1.jpg", "/shop/horseRiderJacket/2.JPG", "/shop/horseRiderJacket/3.JPG", "/shop/horseRiderJacket/4.JPG"]},
 
     {src : "/shop/whiteFencingShirt/bgPicture.jpg", alt: "Shop 7", title : "White Fencing Shirt", description: ["- White fencing jacket", "- Pretty swag if you ask me", "- Lovely buttons"],
     photos: ["/shop/whiteFencingShirt/1.jpg", "/shop/whiteFencingShirt/2.JPG", "/shop/whiteFencingShirt/3.JPG"]},
