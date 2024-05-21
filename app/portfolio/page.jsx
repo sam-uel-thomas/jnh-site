@@ -12,20 +12,18 @@ const Portfolio = () => {
                 <Navbar />
                 <div className='w-full mb-5 z-10'>
                     <div className="relative flex flex-col items-center w-full mb-5 z-10">
-                        <div className="flex flex-col md:flex-row space-x-4 items-center">
+                        <div className="flex flex-col md:flex-row space-x-16 items-center">
                             <div className="w-auto h-auto relative">
                                 <Link href={`/portfolio/portfolioPage?portfolio=main`}>
                                     <div className='hover:scale-105 transition-transform duration-500 ease-in-out flex items-center justify-center'>
-                                        <Image src="/logos/portfolioShape2.png" alt="Main Portfolio" height={500} width={500} />
-                                        <span className='text-black font-semibold absolute'>MAIN PORTFOLIO</span>
+                                        <Image src="/portfolio/mainButton.png" alt="Main Portfolio" height={400} width={400} />
                                     </div>
                                 </Link>
                             </div>
                             <div className="w-auto h-auto relative">
                                 <Link href={`/portfolio/portfolioPage?portfolio=printSamples`}>
                                     <div className='hover:scale-105 transition-transform duration-500 ease-in-out flex items-center justify-center'>
-                                        <Image src="/logos/portfolioShape2.png" alt="Main Portfolio" height={500} width={500} />
-                                        <span className='text-black font-semibold absolute'>PRINT + SAMPLE PORTFOLIO</span>
+                                        <Image src="/portfolio/printSamplesButton.png" alt="Main Portfolio" height={400} width={400} />
                                     </div>
                                 </Link>
                             </div>
