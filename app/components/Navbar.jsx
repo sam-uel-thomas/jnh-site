@@ -11,7 +11,7 @@ export default function Navbar() {
     const logoImg = '/logos/logoAnimated.gif';
 
     const imgBackgroundClasses = "absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full object-contain -z-1";
-    const iconClasses = "z-10 w-16 md:w-28 h-16 md:h-28 cursor-pointer hover:scale-105 transition-transform duration-500 ease-in-out";
+    const iconClasses = "z-10 w-16 md:w-28 h-16 md:h-28 cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out";
     const logoClasses = "w-full h-full z-20";
     const navLinksClasses = "flex z-10 hidden md:flex justify-between w-1/2 items-center";
     const navLinkClasses = "text-black font-bold text-xl uppercase no-underline";
