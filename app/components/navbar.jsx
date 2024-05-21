@@ -8,7 +8,7 @@ export default function Navbar() {
     const portfolioImg = '/logos/portfolio.png';
     const aboutImg = '/logos/about.png';
     const instagramImg = '/logos/instagram.png';
-    const logoImg = '/logos/logo.png';
+    const logoImg = '/logos/logoAnimated.gif';
 
     const imgBackgroundClasses = "absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full object-contain -z-1";
     const iconClasses = "z-10 w-16 md:w-28 h-16 md:h-28 cursor-pointer hover:scale-105 transition-transform duration-500 ease-in-out";
