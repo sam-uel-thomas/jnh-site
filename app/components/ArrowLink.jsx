@@ -8,7 +8,7 @@ const ArrowLink = ({ href, width = 100, height = 100, top = 20, left = 10 }) => 
             alt="Arrow"
             width={width}
             height={height}
-            className={`absolute top-${top} left-${left} mt-20 mr-4 cursor-pointer animate-bobbing-left`}
+            className={`absolute ml-8 mt-4 cursor-pointer animate-bobbing-left z-100`}
         />
     </Link>
 );
