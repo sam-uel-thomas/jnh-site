@@ -24,9 +24,9 @@ export default function page({ params }) {
                         <ImageCard src={sample.src} alt={sample.alt}/>
                     </div>
                     <div className='flex flex-col w-1/2'>
-                        <span className='text-black font-semibold text-2xl mb-8'>{sample.title}</span>
+                        <span className='text-black font-semibold text-4xl mb-8'>{sample.title}</span>
                         {sample.description.map((desc, index) => (
-                            <span key={index} className='text-black font-semibold text-l'>{desc}</span>
+                            <span key={index} className='text-black font-semibold mb-4 text-2xl'>{desc}</span>
                         ))}
                     </div>
                 </div>

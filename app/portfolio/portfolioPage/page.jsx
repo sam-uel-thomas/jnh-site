@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ProjectScroll from '../../components/ProjectScroll';
 import { useSearchParams } from 'next/navigation';
+import ArrowLink from '../../components/ArrowLink';
 
 const Page = () => {
     const searchParams = useSearchParams();
@@ -20,6 +21,7 @@ const Page = () => {
             <div className='bg-white flex flex-col items-center min-h-[100vh] overflow-x-hidden'>
                 <Navbar />
                 <div className="flex items-center justify-center mx-auto flex-grow">
+                <ArrowLink href="/portfolio" style={{ top: '100px', left: '20px' }} /> 
                     <button 
                         className={`w-32 h-32 mx-8 animate-bobbing-left ${imageNumber === 0 ? 'opacity-0 cursor-default' : ''}`} 
                         onClick={imageNumber > 0 ? goPrevImage : undefined}

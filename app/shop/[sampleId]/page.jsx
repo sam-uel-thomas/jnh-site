@@ -36,9 +36,9 @@ export default function Page({ params }) {
                         <button onClick={handleNextPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"></button>
                     </div>
                     <div className='flex flex-col ml-8 w-1/2 mt-16'>
-                        <span className='text-black font-semibold text-2xl mb-8'>{sample.title}</span>
+                        <span className='text-black font-semibold text-4xl mb-8'>{sample.title}</span>
                         {sample.description.map((desc, index) => (
-                            <span key={index} className='text-black font-semibold text-l'>{desc}</span>
+                            <span key={index} className='text-black font-semibold mb-4 text-2xl'>{desc}</span>
                         ))}
                     </div>
                 </div>
