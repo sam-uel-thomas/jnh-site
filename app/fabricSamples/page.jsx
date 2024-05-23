@@ -24,7 +24,7 @@ const fabricSamples = () => {
                 </div> */}
                 <div className="mt-12 relative w-full h-64 mb-64 rotate-2">
                     <img src="/fabricSample/rail.png" alt="Clothesline" className="absolute w-full" />
-                    <div className="flex justify-between w-full px-4 -mt-4">
+                    <div className="flex justify-between w-full px-8 -mt-4">
                         <div className="w-1/5">
                             <Link href="/fabricSamples/0">
                                 <ImageCard src="/fabricSample/1.png" alt="Photo 1"/>
@@ -49,7 +49,7 @@ const fabricSamples = () => {
                 </div>
                 <div className="mt-24 relative w-full h-64 mb-64 -rotate-2">
                     <img src="/fabricSample/rail.png" alt="Clothesline" className="absolute w-full" />
-                    <div className="flex justify-between w-full px-4 -mt-4">
+                    <div className="flex justify-between w-full px-12 -mt-4">
                         <div className="w-1/5">
                             <Link href="/fabricSamples/4">
                                 <ImageCard src="/fabricSample/5.png" alt="Photo 5"/>
@@ -63,6 +63,26 @@ const fabricSamples = () => {
                         <div className="w-1/5">
                             <Link href="/fabricSamples/6">
                                 <ImageCard src="/fabricSample/7.png" alt="Photo 7"/>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-24 relative w-full h-64 mb-64 rotate-2">
+                    <img src="/fabricSample/rail.png" alt="Clothesline" className="absolute w-full" />
+                    <div className="flex justify-between w-full px-12 -mt-4">
+                        <div className="w-1/5">
+                            <Link href="/fabricSamples/7">
+                                <ImageCard src="/fabricSample/8.png" alt="Photo 8"/>
+                            </Link>
+                        </div>
+                        <div className="w-1/5">
+                            <Link href="/fabricSamples/8">
+                                <ImageCard src="/fabricSample/9.png" alt="Photo 9"/>
+                            </Link>
+                        </div>
+                        <div className="w-1/5">
+                            <Link href="/fabricSamples/9">
+                                <ImageCard src="/fabricSample/10.png" alt="Photo 10"/>
                             </Link>
                         </div>
                     </div>
