@@ -6,6 +6,7 @@ import ImageCard from '../components/ImageCard'
 import ProjectScroll from '../components/ProjectScroll'
 import printsData from './printsData'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const predefinedPositions = [
     { left: '50%', top: '38%' }, //1

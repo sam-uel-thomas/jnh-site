@@ -17,7 +17,7 @@ const Footer = () => {
     return (
         <div className='relative overflow-hidden h-32 md:h-96 flex flex-col justify-between -mt-1 md:-mt-2 bg-white'>
             <div className='flex flex-col flex-grow'>
-                <img src="/jnhStitchLong.svg" alt="JNH Rectangle" className="w-full h-auto object-cover relative z-10"/>
+                <img src="/jnhStitchLong.png" alt="JNH Rectangle" className="w-full h-auto object-cover relative z-10"/>
                 <div className='absolute top-2 lg:top-16 left-0 w-screen z-1 flex flex-row px-8 pt-4 flex-grow'>
                     <Image src='/logos/logo.png' alt="JNH Logo" className="w-40 h-40" width={300} height={300}/>
                     <div className='flex flex-col px-16 flex-grow'>

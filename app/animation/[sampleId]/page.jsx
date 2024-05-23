@@ -3,7 +3,9 @@ import animationData from '../animationData'
 import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import ArrowLink from '../../components/ArrowLink';
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function page({ params }) {
     const sample = animationData[Number(params.sampleId)];
@@ -16,13 +18,16 @@ export default function page({ params }) {
         <>
             <div className='bg-white flex flex-col min-h-screen'>
                 <Navbar />
+                <ArrowLink href="/animation" width={100} height={100} top={20} left={10} />
                 <div className="pl-32 mt-12 flex items-start justify-start">
                     <div className='w-[28rem] h-auto mr-8'>
                         <ImageCard src={sample.src} alt={sample.alt}/>
                     </div>
                     <div className='flex flex-col w-1/2'>
-                        <span className='text-black font-semibold text-2xl'>{sample.title}</span>
-                        <span className='text-black font-semibold text-xl'>{sample.description}</span>
+                        <span className='text-black font-semibold text-2xl mb-8'>{sample.title}</span>
+                        {sample.description.map((desc, index) => (
+                            <span key={index} className='text-black font-semibold text-l'>{desc}</span>
+                        ))}
                     </div>
                 </div>
                 <div className='flex flex-row mx-8 mt-12 justify-center'>

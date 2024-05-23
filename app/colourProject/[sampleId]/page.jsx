@@ -4,6 +4,7 @@ import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link'
+import ArrowLink from '../../components/ArrowLink';
 
 export default function page({ params }) {
     const sample = colourProjectData[Number(params.sampleId)];
@@ -16,6 +17,7 @@ export default function page({ params }) {
         <>
             <div className='bg-white flex flex-col min-h-screen'>
                 <Navbar />
+                <ArrowLink href="/colourProject" width={100} height={100} top={20} left={10} />
                 <div className="pl-32 mt-12 flex items-start justify-start">
                     <div className='w-[28rem] h-auto mr-8'>
                         <ImageCard src={sample.src} alt={sample.alt}/>
