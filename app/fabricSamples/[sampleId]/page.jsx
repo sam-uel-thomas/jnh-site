@@ -3,8 +3,8 @@ import fabricSamplesData from '../fabricSamplesData'
 import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import Link from 'next/link'
-import digitalProjectData from './digitalProjectData'
+import Link from 'next/link';
+import ArrowLink from '../../components/ArrowLink';
 
 export default function page({ params }) {
     const sample = fabricSamplesData[Number(params.sampleId)];
