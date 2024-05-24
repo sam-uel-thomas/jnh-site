@@ -15,7 +15,7 @@ const teamProject = () => {
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-12 p-6 md:p-16">
                         {teamProjectData.length > 0 ? (
                             teamProjectData.map((sample, index) => (
-                                <Link href={`/teamProject/${index}`} key={index}>
+                                <Link href={`/teamsProject/${index}`} key={index}>
                                     <div className="w-2/3 h-auto">
                                         <ImageCard src={sample.src} alt={sample.alt} title={index+1} />
                                     </div>

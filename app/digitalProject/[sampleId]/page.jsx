@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link'
 import ArrowLink from '../../components/ArrowLink'
+import ProjectScroll from '../../components/ProjectScroll'
 
 export default function page({ params }) {
     const sample = digitalProjectData[Number(params.sampleId)];
