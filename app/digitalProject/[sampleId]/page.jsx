@@ -41,6 +41,9 @@ export default function page({ params }) {
                         return null;
                     })}
                 </div>
+                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10 mt-auto">
+                    <ProjectScroll/>
+                </div>
             </div>
             <Footer />
         </>

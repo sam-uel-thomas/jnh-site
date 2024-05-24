@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import ProjectScroll from '../components/ProjectScroll'
 import Footer from '../components/Footer'
 
 const Page = () => {
@@ -23,6 +24,9 @@ const Page = () => {
                                         fashion maybe lighter than others my dogged determination would make me a true asset as I will always
                                         learn on the spot and will be ready to be tasked with anything thrown at me.
                                 </span>
+                        </div>
+                        <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10 mt-auto">
+                            <ProjectScroll/>
                         </div>
                         </div>
                         <Footer />

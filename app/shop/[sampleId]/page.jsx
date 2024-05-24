@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link'
 import ArrowLink from '../../components/ArrowLink'
+import ProjectScroll from '../../components/ProjectScroll'
 
 export default function Page({ params }) {
     const sample = shopData[Number(params.sampleId)];
@@ -55,6 +56,9 @@ export default function Page({ params }) {
                         }
                         return null;
                     })}
+                </div>
+                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10 mt-auto">
+                    <ProjectScroll/>
                 </div>
             </div>
             <Footer />

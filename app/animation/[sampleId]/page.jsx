@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ArrowLink from '../../components/ArrowLink';
 import Link from 'next/link'
+import ProjectScroll from '../../components/ProjectScroll'
 import Image from 'next/image'
 
 export default function page({ params }) {
@@ -43,6 +44,9 @@ export default function page({ params }) {
                         }
                         return null;
                     })}
+                </div>
+                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10 mt-auto">
+                    <ProjectScroll/>
                 </div>
             </div>
             <Footer />
