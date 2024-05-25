@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProjectScroll from '../components/ProjectScroll';
 import ArrowLink from '../components/ArrowLink';
+import Link from 'next/link';
 import Image from 'next/image';
 
 const Page = () => {
@@ -25,13 +26,18 @@ const Page = () => {
                     >
                         <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
                     </button>
-                    <img src={images[imageNumber]} className="w-1/2" alt="Page" />
+                    <Link href={`/balenciagaMuseumProject/${imageNumber + 1}`}>
+                            <Image src={images[imageNumber]} width={700} height={100} alt="Page" />
+                    </Link>               
                     <button 
                         className={`w-32 h-32 mx-8 animate-bobbing-right ${imageNumber === images.length - 1 ? 'opacity-0 cursor-default' : ''}`} 
                         onClick={imageNumber < images.length - 1 ? goNextImage : undefined}
                     >
                         <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
                     </button>
+                </div>
+                <div className="self-start">
+                    <span className='font-semibold text-s mb-4 ml-8 text-left text-orange'>PHOTOGRAPHY : BANDINI3000</span>
                 </div>
                 <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
                     <ProjectScroll/>

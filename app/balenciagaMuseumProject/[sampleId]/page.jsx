@@ -19,7 +19,7 @@ export default function page({ params }) {
             <div className='bg-white flex flex-col min-h-screen'>
                 <Navbar />
                 <ArrowLink href="/balenciagaMuseumProject" width={100} height={100} top={20} left={10} />
-                <div className="pl-32 mt-12 flex items-start justify-start">
+                <div className="pl-36 mt-12 flex items-start justify-start">
                     <div className='w-[28rem] h-auto mr-8'>
                         <ImageCard src={sample.src} alt={sample.alt}/>
                     </div>
