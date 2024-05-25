@@ -1,14 +1,14 @@
 import React from 'react'
-import digitalProjectData from '../digitalProjectData'
+import colourProjectData from '../photographyData'
 import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link'
-import ArrowLink from '../../components/ArrowLink'
-import ProjectScroll from '../../components/ProjectScroll'
+import ArrowLink from '../../components/ArrowLink';
+import ProjectScroll from '../../components/ProjectScroll';
 
 export default function page({ params }) {
-    const sample = digitalProjectData[Number(params.sampleId)];
+    const sample = photographyData[Number(params.sampleId)];
 
     if (!sample) {
         return <h1>No fabric sample found for id {params.sampleId}</h1>;
@@ -18,7 +18,7 @@ export default function page({ params }) {
         <>
             <div className='bg-white flex flex-col min-h-screen'>
                 <Navbar />
-                <ArrowLink href="/digitalProject" width={100} height={100} top={20} left={10} />
+                <ArrowLink href="/colourProject" width={100} height={100} top={20} left={20} />
                 <div className="pl-32 mt-12 flex items-start justify-start">
                     <div className='w-[28rem] h-auto mr-8'>
                         <ImageCard src={sample.src} alt={sample.alt}/>
@@ -29,11 +29,11 @@ export default function page({ params }) {
                     </div>
                 </div>
                 <div className='flex flex-row mx-8 mt-12 justify-center'>
-                    {digitalProjectData.map((item, index) => {
+                    {photographyData.map((item, index) => {
                         if (index !== Number(params.sampleId)) {
                             return (
                                 <div key={index} className='w-[28rem] h-auto mr-8'>
-                                    <Link href={`/digitalProject/${index}`}>
+                                    <Link href={`/colourProject/${index}`}>
                                         <ImageCard src={item.src} alt={item.alt}/>
                                     </Link>
                                 </div>

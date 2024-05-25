@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Page = () => {
-    const images = Array.from({ length: 7 }, (_, i) => `/colourProject/${i + 1}.png`);
+    const images = Array.from({ length: 13 }, (_, i) => `/photography/${i + 1}.png`);
     const [imageNumber, setImageNumber] = useState(0);
 
     const goPrevImage = () => setImageNumber(Math.max(imageNumber - 1, 0));
@@ -26,7 +26,7 @@ const Page = () => {
                     >
                         <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
                     </button>
-                    <Link href={`/colourProject/${imageNumber + 1}`}>
+                    <Link href={`/photography/${imageNumber + 1}`}>
                             <Image src={images[imageNumber]} width={700} height={100} alt="Page" />
                     </Link>               
                     <button 
