@@ -17,8 +17,8 @@ const animation = () => {
                                 <Link href={`/animation/${index}`} key={index} className='flex justify-center items-center'>
                                     <div className="w-full h-auto">
                                         <ImageCard 
-                                            src={sample.src} 
-                                            hoverSrc={sample.hoverSrc}
+                                            src={sample.staticSrc} 
+                                            hoverSrc={sample.src}
                                             alt={sample.alt} 
                                             title={`${index+1}: ${sample.title}`} 
                                         />

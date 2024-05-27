@@ -7,14 +7,18 @@ const ImageCard = ({ src, hoverSrc, alt, title }) => {
     let timeoutId = null;
 
     const handleMouseOver = () => {
-        if (timeoutId) clearTimeout(timeoutId);
-        setCurrentSrc(hoverSrc);
+        if (hoverSrc) {
+            if (timeoutId) clearTimeout(timeoutId);
+            setCurrentSrc(hoverSrc);
+        }
     }
 
     const handleMouseOut = () => {
-        timeoutId = setTimeout(() => {
-            setCurrentSrc(src);
-        }, 2000);
+        if (hoverSrc) {
+            timeoutId = setTimeout(() => {
+                setCurrentSrc(src);
+            }, 2000);
+        }
     }
 
     return (
