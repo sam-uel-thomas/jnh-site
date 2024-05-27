@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
-import animationData from './animationData'
+import animationData from '../data/animationData'
 import Link from 'next/link'
 
 const animation = () => {

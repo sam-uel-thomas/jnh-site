@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
 import ProjectScroll from '../components/ProjectScroll'
 import Link from 'next/link'
-import fabricSamplesData from './fabricSamplesData'
+import fabricSamplesData from '../data/fabricSamplesData'
 
 const fabricSamples = () => {
     return (

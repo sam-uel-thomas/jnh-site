@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
 import ProjectScroll from '../components/ProjectScroll'
-import printsData from './printsData'
+import printsData from '../data/printsData'
 import Link from 'next/link'
 import Image from 'next/image'
 

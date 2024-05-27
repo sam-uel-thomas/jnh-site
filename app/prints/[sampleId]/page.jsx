@@ -1,5 +1,5 @@
 import React from 'react'
-import printsData from '../printsData'
+import printsData from '../../data/printsData'
 import ImageCard from '../../components/ImageCard'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
