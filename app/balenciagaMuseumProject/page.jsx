@@ -6,11 +6,13 @@ import balenciagaMuseumProjectData from '../data/balenciagaMuseumProjectData';
 
 const Page = () => {
     return (
-        <div className='bg-white flex flex-col items-center min-h-[100vh] overflow-x-hidden'>
-            <Navbar />
-            <SlidePage data={balenciagaMuseumProjectData} link={"balenciagaMuseumProject"} />
+        <>
+            <div className='bg-white flex flex-col items-center min-h-screen overflow-x-hidden'>
+                <Navbar />
+                <SlidePage data={balenciagaMuseumProjectData} link={"balenciagaMuseumProject"} />
+            </div>
             <Footer />
-        </div>
+        </>
     );
 }
 

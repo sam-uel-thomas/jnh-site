@@ -5,11 +5,13 @@ import SlidePage from '../components/SlidePage';
 import colourProjectData from '../data/colourProjectData';
 
 const ColourProjectPage = () => (
-    <div className='bg-white flex flex-col items-center min-h-[100vh] overflow-x-hidden'>
-        <Navbar />
-        <SlidePage data={colourProjectData} link={"colourProject"} />
+    <>
+        <div className='bg-white flex flex-col items-center min-h-screen overflow-x-hidden'>
+            <Navbar />
+            <SlidePage data={colourProjectData} link={"colourProject"} />
+        </div>
         <Footer />
-    </div>
+    </>
 );
 
 export default ColourProjectPage;
