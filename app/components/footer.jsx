@@ -50,9 +50,9 @@ const Footer = () => {
                         <FontAwesomeIcon icon={faLinkedin} color="white" />
                     </a>
                     <div className="border-l h-6 mx-3"></div>
-                    <span className='text-xs font-semibold'>SHOP</span>
-                    <span className='text-xs font-semibold'>PORTFOLIO</span>
-                    <span className='text-xs font-semibold'>ABOUT ME</span>
+                    <span className='text-xs font-semibold text-white'>SHOP</span>
+                    <span className='text-xs font-semibold text-white'>PORTFOLIO</span>
+                    <span className='text-xs font-semibold text-white'>ABOUT ME</span>
                 </div>
             </div>
         </div>
