@@ -16,7 +16,7 @@ const Footer = () => {
 
     return (
         <div className='relative overflow-hidden h-auto md:h-96 flex flex-col justify-between -mt-1 md:-mt-2 bg-white'>
-            {/* Show this section only on desktop */}
+
             <div className='hidden md:flex flex-col flex-grow'>
                 <img src="/jnhStitchLong.png" alt="JNH Rectangle" className="w-full h-auto object-cover relative z-10"/>
                 <div className='absolute top-2 lg:top-16 left-0 w-full z-10 flex flex-row px-8 pt-4 flex-grow'>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            {/* Footer shape and links visible on all devices */}
+
             <div className="w-full h-auto flex items-center md:relative md:bottom-0 mb-2" style={{backgroundImage: `url(/jnhFooterShape.png)`, backgroundSize: '100% 100%', backgroundPosition: 'center'}}>
                 <div className="z-20 flex flex-row items-center space-x-4 py-4 px-4 md:px-16 justify-center w-full">
                     <a href="https://www.instagram.com/jonahdavies.2/" target="_blank" rel="noopener noreferrer" className='h-4 w-4 flex items-center'>
