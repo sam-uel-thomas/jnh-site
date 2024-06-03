@@ -6,7 +6,7 @@ import colourProjectData from '../data/colourProjectData';
 
 const ColourProjectPage = () => (
     <>
-        <div className='bg-white flex flex-col items-center min-h-screen overflow-x-hidden'>
+        <div className='bg-white flex flex-col items-center min-h-[100dvh] overflow-x-hidden'>
             <Navbar />
             <SlidePage data={colourProjectData} link={"colourProject"} />
         </div>

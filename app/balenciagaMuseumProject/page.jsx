@@ -7,7 +7,7 @@ import balenciagaMuseumProjectData from '../data/balenciagaMuseumProjectData';
 const Page = () => {
     return (
         <>
-            <div className='bg-white flex flex-col items-center min-h-screen overflow-x-hidden'>
+            <div className='bg-white flex flex-col items-center min-h-[100dvh] overflow-x-hidden'>
                 <Navbar />
                 <SlidePage data={balenciagaMuseumProjectData} link={"balenciagaMuseumProject"} />
             </div>
