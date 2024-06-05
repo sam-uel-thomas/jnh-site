@@ -55,7 +55,7 @@ const Prints = () => {
                             printsData.map((sample, index) => (
                                <Link href={`/prints/${index}`} key={index}>
                                     <div
-                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-1/6"
+                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-1/6 lg:1/8"
                                         style={positions[index]}
                                         onClick={(event) => handleImageClick(event, index)}
                                     >
