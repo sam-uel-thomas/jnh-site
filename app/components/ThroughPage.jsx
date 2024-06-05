@@ -24,7 +24,9 @@ export default function ThroughPage({ projectData, sampleId, arrowLink, imageWid
                 </div>
                 <div className='flex flex-col w-full md:w-1/2'>
                     <span className='text-black font-semibold text-2xl'>{sample.title}</span>
-                    <span className='text-black font-semibold text-xl'>{sample.description}</span>
+                    {sample.description && sample.description.map((desc, index) => (
+                        <span key={index} className='text-black font-semibold text-xl'>{desc}</span>
+                    ))}
                 </div>
             </div>
             <div className='grid grid-cols-3 md:grid-cols-none md:flex md:flex-row gap-4 mx-4 md:mx-8 mt-12'>
