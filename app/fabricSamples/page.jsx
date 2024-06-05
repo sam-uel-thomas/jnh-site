@@ -41,13 +41,13 @@ const FabricSamples = () => {
         <div>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <div className="mt-12 space-y-32 mb-24">
+                <div className="mt-12 space-y-24 md:space-y-32 mb-24">
                     {rails.map((rail, railIndex) => (
-                        <div key={railIndex} className={`relative w-full mb-64 ${railIndex % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
+                        <div key={railIndex} className={`relative w-full ${railIndex % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
                             <img src="/fabricSample/rail.png" alt="Clothesline" className="absolute w-full" />
-                            <div className="flex justify-between w-full px-4 md:px-12 lg:px-24 -mt-4 flex-wrap">
+                            <div className="flex justify-between w-full px-4 md:px-12 lg:px-24 flex-wrap">
                                 {rail.map((sample, sampleIndex) => (
-                                    <div key={sampleIndex} className="w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                                    <div key={sampleIndex} className="w-1/2 md:w-1/3 lg:w-1/4 -mt-4 p-2">
                                         <Link href={`/fabricSamples/${railIndex * chunkSize + sampleIndex}`}>
                                             <ImageCard src={sample.src} alt={`Photo ${railIndex * chunkSize + sampleIndex + 1}`} />
                                         </Link>
