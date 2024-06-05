@@ -8,9 +8,9 @@ import ThroughPage from '../../components/ThroughPage';
 export default function page({ params }) {
     return (
         <>
-            <div className='bg-white flex flex-col min-h-screen'>
+            <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <ThroughPage projectData={fabricSamplesData} sampleId={params.sampleId} arrowLink={"/fabricSamples"} />
+                <ThroughPage projectData={fabricSamplesData} sampleId={params.sampleId} arrowLink={"/fabricSamples"} imageWidth={24}/>
             </div>
             <Footer />
         </>
