@@ -16,7 +16,7 @@ const shop = () => {
                         {shopData.length > 0 ? (
                             shopData.map((sample, index) => (
                                 <Link href={`/shop/${index}`} key={index} className='flex justify-center items-center'>
-                                    <div className="w-2/3 h-auto">
+                                    <div className="w-4/5 h-auto">
                                         <ImageCard src={sample.src} alt={sample.alt} title={`${index+1}: ${sample.title}`} />
                                     </div>
                                 </Link>
