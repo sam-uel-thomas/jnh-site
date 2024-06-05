@@ -24,7 +24,8 @@ const Prints = () => {
     const initialPositions = printsData.map(() => ({
         left: '50%',
         top: '50%',
-        transform: `translate(-50%, -50%) rotate(${Math.random() * 40 - 20}deg)`}));
+        transform: `translate(-50%, -50%) rotate(${Math.random() * 40 - 20}deg)`
+    }));
 
     const [positions, setPositions] = useState(initialPositions);
     const [clicked, setClicked] = useState(printsData.map(() => false));
@@ -35,7 +36,7 @@ const Prints = () => {
 
             const newPositions = [...positions];
             const newPosition = predefinedPositions[index % predefinedPositions.length];
-            newPositions[index] = { ...newPosition, transform: `translate(-50%, -50%)`};
+            newPositions[index] = { ...newPosition, transform: 'translate(-50%, -50%)' };
             console.log(`Image ${index} moved to: left ${newPosition.left}, top ${newPosition.top}`);
             setPositions(newPositions);
 
@@ -53,9 +54,9 @@ const Prints = () => {
                     <div className="relative w-full h-full mt-24">
                         {printsData.length > 0 ? (
                             printsData.map((sample, index) => (
-                               <Link href={`/prints/${index}`} key={index}>
+                                <Link href={`/prints/${index}`} key={index}>
                                     <div
-                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-1/6 lg:1/12"
+                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[12rem]"
                                         style={positions[index]}
                                         onClick={(event) => handleImageClick(event, index)}
                                     >
