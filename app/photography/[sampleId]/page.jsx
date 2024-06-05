@@ -10,7 +10,7 @@ export default function page({ params }) {
         <>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <ThroughPage projectData={photographyData} sampleId={params.sampleId} arrowLink={"/photography"} />
+                <ThroughPage projectData={photographyData} sampleId={params.sampleId} arrowLink={"/photography"}/>
             </div>
             <Footer />
         </>
