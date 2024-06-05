@@ -12,7 +12,7 @@ const Portfolio = () => {
                 <Navbar />
                 <div className='w-full mb-5 z-10'>
                     <div className="relative flex flex-col items-center w-full mb-5 z-10">
-                        <div className="flex flex-col md:flex-row space-x-16 items-center">
+                        <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16 items-center">
                             <div className="w-auto h-auto relative">
                                 <Link href={`/portfolio/portfolioPage?portfolio=main`}>
                                     <div className='hover:scale-105 transition-transform duration-500 ease-in-out flex items-center justify-center'>
