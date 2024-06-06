@@ -27,6 +27,12 @@ const FabricSamples = () => {
         };
     }, []);
 
+    // Map fabric samples data to include unique indices
+    const indexedData = fabricSamplesData.map((sample, index) => ({
+        ...sample,
+        index,
+    }));
+
     const chunkArray = (array, size) => {
         const chunkedArray = [];
         for (let i = 0; i < array.length; i += size) {
@@ -35,7 +41,7 @@ const FabricSamples = () => {
         return chunkedArray;
     };
 
-    const rails = chunkArray(fabricSamplesData, chunkSize);
+    const rails = chunkArray(indexedData, chunkSize);
 
     return (
         <div>
@@ -46,10 +52,10 @@ const FabricSamples = () => {
                         <div key={railIndex} className={`relative w-full ${railIndex % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
                             <img src="/fabricSample/rail.png" alt="Clothesline" className="absolute w-full scale-110" />
                             <div className="flex justify-between w-full px-4 md:px-12 lg:px-24 flex-wrap">
-                                {rail.map((sample, sampleIndex) => (
-                                    <div key={sampleIndex} className="w-1/2 md:w-1/3 lg:w-1/4 -mt-4 p-2">
-                                        <Link href={`/fabricSamples/${railIndex * chunkSize + sampleIndex}`}>
-                                            <ImageCard src={sample.src} alt={`Photo ${railIndex * chunkSize + sampleIndex + 1}`} />
+                                {rail.map((sample) => (
+                                    <div key={sample.index} className="w-1/2 md:w-1/3 lg:w-1/4 -mt-4 p-2">
+                                        <Link href={`/fabricSamples/${sample.index}`}>
+                                            <ImageCard src={sample.src} alt={`Photo ${sample.index + 1}`} />
                                         </Link>
                                     </div>
                                 ))}
