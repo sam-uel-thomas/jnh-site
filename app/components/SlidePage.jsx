@@ -66,22 +66,24 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
         <div className="order-1 md:order-2">
           {isImageClickable ? (
             <Link href={`/${link}/${imageNumber}`} className="block">
-              {loading ? (
-                <div className="w-700 h-100 flex items-center justify-center">
-                  <div className="loader">Loading...</div>
+              <div className="relative w-700 h-100">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {loading ? (
+                    <div className="loader">Loading...</div>
+                  ) : null}
                 </div>
-              ) : (
                 <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
-              )}
+              </div>
             </Link>
           ) : (
-            loading ? (
-              <div className="w-700 h-100 flex items-center justify-center">
-                <div className="loader">Loading...</div>
+            <div className="relative w-700 h-100">
+              <div className="absolute inset-0 flex items-center justify-center">
+                {loading ? (
+                  <div className="loader">Loading...</div>
+                ) : null}
               </div>
-            ) : (
               <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
-            )
+            </div>
           )}
         </div>
         <div className="hidden md:flex md:order-1 md:flex-shrink-0">
@@ -118,4 +120,3 @@ const NavButton = ({ onClick, disabled, children, direction }) => {
 };
 
 export default SlidePage;
-//test comment
