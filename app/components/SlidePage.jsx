@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProjectScroll from '../components/ProjectScroll';
 
-const SlidePage = ({ data, link }) => {
+const SlidePage = ({ data, link, isImageClickable }) => {
   const [imageNumber, setImageNumber] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -42,9 +42,13 @@ const SlidePage = ({ data, link }) => {
           </NavButton>
         </div>
         <div className="order-1 md:order-2">
-          <Link href={`/${link}/${imageNumber}`} className="block">
-            <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
-          </Link>
+            {isImageClickable ? (
+                <Link href={`/${link}/${imageNumber}`} className="block">
+                    <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
+                </Link>
+            ) : (
+                <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
+            )}
         </div>
         <div className="hidden md:flex md:order-1 md:flex-shrink-0">
         <NavButton onClick={goPrevImage} disabled={!canGoPrev} direction="left">

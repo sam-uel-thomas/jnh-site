@@ -17,7 +17,7 @@ const Page = () => {
         <>
             <div className='bg-white flex flex-col items-center min-h-[100svh] overflow-x-hidden'>
                 <Navbar />
-                <SlidePage data={data} />
+                <SlidePage data={data} isImageClickable={false} />
             </div>
             <Footer />
         </>
