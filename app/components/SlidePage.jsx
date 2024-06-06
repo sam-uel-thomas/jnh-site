@@ -29,14 +29,12 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
 
   const goPrevImage = () => {
     if (imageNumber > 0) {
-      setLoading(true);
       setImageNumber((prev) => prev - 1);
     }
   };
 
   const goNextImage = () => {
     if (imageNumber < data.length - 1) {
-      setLoading(true);
       setImageNumber((prev) => prev + 1);
     }
   };
@@ -56,7 +54,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
 
   return (
     <>
-      <div className="flex flex-col px-4 items-center justify-center mx-auto flex-grow md:flex-row md:items-center">
+      <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
         <div className="md:hidden flex flex-row justify-center mt-4 order-3">
           <NavButton onClick={goPrevImage} disabled={!canGoPrev} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
