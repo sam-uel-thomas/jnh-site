@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ArrowLink from './ArrowLink';
 import ProjectScroll from './ProjectScroll';
 
-export default function ThroughPage({ projectData, sampleId, arrowLink, imageWidth = 32}) {
+export default function ThroughPage({ projectData, sampleId, arrowLink, imageWidth = 24}) {
     const sample = projectData[Number(sampleId)];
 
     if (!sample) {
@@ -23,9 +23,9 @@ export default function ThroughPage({ projectData, sampleId, arrowLink, imageWid
                     <ImageCard src={sample.src} alt={sample.alt}/>
                 </div>
                 <div className='flex flex-col w-full md:w-1/2'>
-                    <span className='text-black font-semibold text-2xl'>{sample.title}</span>
+                    <span className='text-black font-semibold text-xl md:text-4xl mb-4 md:mb-8'>{sample.title}</span>
                     {sample.description && sample.description.map((desc, index) => (
-                        <span key={index} className='text-black font-semibold text-xl'>{desc}</span>
+                        <span key={index} className='text-black font-semibold text-l md:text-xl mb-2 md:mb-6'>{desc}</span>
                     ))}
                 </div>
             </div>

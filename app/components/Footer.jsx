@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faPinterest, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     const [name, setName] = useState('');
@@ -50,9 +51,15 @@ const Footer = () => {
                         <FontAwesomeIcon icon={faLinkedin} color="white" />
                     </a>
                     <div className="border-l h-6 mx-3"></div>
-                    <span className='text-xs font-semibold text-white'>SHOP</span>
-                    <span className='text-xs font-semibold text-white'>PORTFOLIO</span>
-                    <span className='text-xs font-semibold text-white'>ABOUT ME</span>
+                    <Link href="/shop">
+                        <span className='text-xs font-semibold text-white'>SHOP</span>
+                    </Link>
+                    <Link href="/portfolio">
+                        <span className='text-xs font-semibold text-white'>PORTFOLIO</span>
+                    </Link>
+                    <Link href="/about">
+                        <span className='text-xs font-semibold text-white'>ABOUT ME</span>
+                    </Link>
                 </div>
             </div>
         </div>
