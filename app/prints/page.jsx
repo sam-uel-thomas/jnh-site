@@ -52,7 +52,7 @@ const Prints = () => {
             <div className='bg-white flex flex-col justify-between min-h-screen overflow-x-hidden'>
                 <Navbar />
                 <div className="block md:hidden">
-                    <SlidePage data={printsData} />
+                    <SlidePage data={printsData} link={"prints"} />
                 </div>
                 <div className='hidden md:block '>
                 <div className="relative w-full h-full mt-24">
