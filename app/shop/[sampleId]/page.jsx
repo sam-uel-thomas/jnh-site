@@ -29,28 +29,29 @@ export default function Page({ params }) {
         <>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <ArrowLink href="/shop" width={100} height={100} top={20} left={10} />
-                <div className="pl-32 mt-28 mb-8 flex items-start justify-start">
-                    <div className='relative w-[28rem] h-auto mr-8'>
+                <ArrowLink href={"/shop"} width={70} height={70} top={0} left={0} className="md:hidden" />
+                <ArrowLink href={"/shop"} width={100} height={100} top={0} left={0} className="hidden md:block" />
+                <div className="px-8 md:pl-32 mt-12 mb-8 flex flex-col md:flex-row items-start justify-start w-full">
+                    <div className='relative w-full md:w-[28rem] h-auto mb-4 md:mb-0'>
                         <ImageCard key={photoIndex} src={sample.photos[photoIndex]} alt={sample.alt}/>
                         <button onClick={handlePrevPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"></button>
                         <button onClick={handleNextPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"></button>
                     </div>
-                    <div className='flex flex-col ml-8 w-1/2 mt-8'>
-                        <span className='text-black font-semibold text-4xl mb-8'>{sample.title}</span>
+                    <div className='flex flex-col w-full md:w-1/2 ml-0 md:ml-8'>
+                        <span className='text-black font-semibold text-2xl md:text-4xl mb-4 md:mb-8'>{sample.title}</span>
                         {sample.description.map((desc, index) => (
-                            <span key={index} className='text-black font-semibold mb-6 text-2xl'>{desc}</span>
+                            <span key={index} className='text-black font-semibold mb-2 md:mb-6 text-xl md:text-2xl'>{desc}</span>
                         ))}
                     </div>
                 </div>
-                <div className="self-start mb-12">
-                    <span className='font-semibold text-s mb-4 ml-8 text-left text-black'>MADE TO ORDER + ENQUIRE THROUGH INSTAGRAM</span>
+                <div className="self-start mb-12 px-8">
+                    <span className='font-semibold text-s mb-4 text-left text-black'>MADE TO ORDER + ENQUIRE THROUGH INSTAGRAM</span>
                 </div>
-                <div className='flex flex-row mx-8 mb-16 justify-center'>
+                <div className='grid grid-cols-3 md:grid-cols-none md:flex md:flex-row gap-4 mx-4 md:mx-8 mb-16'>
                     {shopData.map((item, index) => {
                         if (index !== Number(params.sampleId)) {
                             return (
-                                <div key={index} className='w-[28rem] h-auto mr-8'>
+                                <div key={index} className='w-full h-auto'>
                                     <Link href={`/shop/${index}`}>
                                         <ImageCard src={item.src} alt={item.alt}/>
                                     </Link>
