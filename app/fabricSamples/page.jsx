@@ -6,6 +6,7 @@ import ImageCard from '../components/ImageCard';
 import ProjectScroll from '../components/ProjectScroll';
 import Link from 'next/link';
 import fabricSamplesData from '../data/fabricSamplesData';
+import ArrowLink from '../components/ArrowLink';
 
 const FabricSamples = () => {
     const [chunkSize, setChunkSize] = useState(3);
@@ -47,7 +48,9 @@ const FabricSamples = () => {
         <div>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <div className="mt-12 space-y-24 md:space-y-32 mb-24">
+                <div className=" space-y-24 md:space-y-32 mb-24">
+                    <ArrowLink href={"/"} width={70} height={70} top={0} left={0} className="absolute md:hidden" />
+                    <ArrowLink href={"/"} width={100} height={100} top={0} left={0} className="absolute hidden md:block" />
                     {rails.map((rail, railIndex) => (
                         <div key={railIndex} className={`relative w-full ${railIndex % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
                             <img src="/fabricSample/rail.png" alt="Clothesline" className="absolute w-full scale-110" />
