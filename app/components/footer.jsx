@@ -57,7 +57,7 @@ const Footer = () => {
                     <Link href="/portfolio">
                         <span className='text-xs font-semibold text-white'>PORTFOLIO</span>
                     </Link>
-                    <Link href="/about">
+                    <Link href="/about" className='hidden md:block'>
                         <span className='text-xs font-semibold text-white'>ABOUT ME</span>
                     </Link>
                 </div>
