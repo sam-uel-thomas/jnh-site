@@ -3,8 +3,9 @@ import ImageCard from './ImageCard';
 import Link from 'next/link';
 import ArrowLink from './ArrowLink';
 import ProjectScroll from './ProjectScroll';
+import Image from 'next/image';
 
-export default function ThroughPage({ projectData, sampleId, arrowLink, imageWidth = 24}) {
+export default function ThroughPage({ projectData, sampleId, arrowLink, imageWidth = 32}) {
     const sample = projectData[Number(sampleId)];
 
     if (!sample) {
@@ -17,10 +18,13 @@ export default function ThroughPage({ projectData, sampleId, arrowLink, imageWid
             <ArrowLink href={arrowLink} width={100} height={100} top={0} left={0} className="hidden md:block" />
             <div className="px-8 md:pl-36 mt-12 flex flex-col md:flex-row items-start justify-start z-10">
                 <div className={`w-full mb-4 md:mb-0 md:mr-8 md:hidden`}>
-                    <ImageCard src={sample.src} alt={sample.alt}/>
+                    <Image src={sample.src} alt={sample.alt} width={32} height={64} layout="responsive" objectFit="cover"/> {/* Replace ImageCard with Image */}
                 </div>
-                <div className={`hidden md:block w-[${imageWidth}rem] mb-4 md:mb-0 md:mr-8`}>
-                    <ImageCard src={sample.src} alt={sample.alt}/>
+                <div 
+                    className={`hidden md:block mb-4 md:mb-0 md:mr-8`}
+                    style={{ width: `${imageWidth}rem` }} // Use the style prop to set the width dynamically
+                >
+                    <Image src={sample.src} alt={sample.alt} width={32} height={64} layout="responsive" objectFit="cover"/> {/* Replace ImageCard with Image */}
                 </div>
                 <div className='flex flex-col w-full md:w-1/2'>
                     <span className='text-black font-semibold text-xl md:text-4xl mb-4 md:mb-8'>{sample.title}</span>

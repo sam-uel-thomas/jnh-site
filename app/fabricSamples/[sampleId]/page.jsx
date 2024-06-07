@@ -10,7 +10,7 @@ export default function page({ params }) {
         <>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <ThroughPage projectData={fabricSamplesData} sampleId={params.sampleId} arrowLink={"/fabricSamples"} imageWidth={24}/>
+                <ThroughPage projectData={fabricSamplesData} sampleId={params.sampleId} arrowLink={"/fabricSamples"} imageWidth={20}/>
             </div>
             <Footer />
         </>

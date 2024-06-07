@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import Link from 'next/link'
 import ArrowLink from '../../components/ArrowLink'
 import ProjectScroll from '../../components/ProjectScroll'
+import Image from 'next/image'
 
 export default function Page({ params }) {
     const sample = shopData[Number(params.sampleId)];
@@ -33,7 +34,14 @@ export default function Page({ params }) {
                 <ArrowLink href={"/shop"} width={100} height={100} top={0} left={0} className="hidden md:block" />
                 <div className="px-8 md:pl-32 mt-12 mb-8 flex flex-col md:flex-row items-start justify-start w-full">
                     <div className='relative w-full md:w-[28rem] mb-4 md:mb-0'>
-                        <ImageCard key={photoIndex} src={sample.photos[photoIndex]} alt={sample.alt}/>
+                        <Image 
+                            key={photoIndex} 
+                            src={sample.photos[photoIndex]} 
+                            alt={sample.alt}
+                            layout="responsive" // This will make the image scale based on its container's width
+                            width={80} // Adjust these values to match your images' aspect ratio
+                            height={83} 
+                        />
                         <button onClick={handlePrevPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"></button>
                         <button onClick={handleNextPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"></button>
                     </div>
