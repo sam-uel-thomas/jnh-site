@@ -49,32 +49,30 @@ const Prints = () => {
 
     return (
         <div>
-            <div className='bg-white flex flex-col justify-between min-h-screen overflow-x-hidden'>
+            <div className='bg-white flex flex-col justify-between h-screen overflow-x-hidden'>
                 <Navbar />
                 <div className="block md:hidden">
                     <SlidePage data={printsData} link={"prints"} />
                 </div>
-                <div className='hidden md:block '>
-                <div className="relative w-full h-full mt-24">
-                    {printsData.length > 0 ? (
-                        printsData.map((sample, index) => (
-                            <Link href={`/prints/${index}`} key={index}>
-                                <div
-                                    className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[14rem]"
-                                    style={positions[index]}
-                                    onClick={(event) => handleImageClick(event, index)}
-                                >
-                                    <ImageCard src={sample.src} alt={sample.alt} />
-                                </div>
-                            </Link>
-                        ))
-                    ) : (
-                        <p>No data available</p>
-                    )}
+                    <div className="hidden md:block relative w-full h-full mt-24">
+                        {printsData.length > 0 ? (
+                            printsData.map((sample, index) => (
+                                <Link href={`/prints/${index}`} key={index}>
+                                    <div
+                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[14rem]"
+                                        style={positions[index]}
+                                        onClick={(event) => handleImageClick(event, index)}
+                                    >
+                                        <ImageCard src={sample.src} alt={sample.alt} />
+                                    </div>
+                                </Link>
+                            ))
+                        ) : (
+                            <p>No data available</p>
+                        )}
                 </div>
-                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
+                <div className="hidden md:flex relative flex-col justify-end items-center w-full mb-5 z-10">
                     <ProjectScroll />
-                </div>
                 </div>
             </div>
             <Footer />
