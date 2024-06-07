@@ -7,6 +7,7 @@ import ProjectScroll from '../components/ProjectScroll'
 import printsData from '../data/printsData'
 import Link from 'next/link'
 import Image from 'next/image'
+import SlidePage from '../components/SlidePage'
 
 const predefinedPositions = [
     { left: '50%', top: '38%' }, //1
@@ -48,29 +49,32 @@ const Prints = () => {
 
     return (
         <div>
-            <div className='bg-white flex flex-col justify-between h-screen'>
+            <div className='bg-white flex flex-col justify-between min-h-screen'>
                 <Navbar />
-                <div className="flex-grow relative flex flex-col justify-center items-center w-full h-full">
-                    <div className="relative w-full h-full mt-24">
-                        {printsData.length > 0 ? (
-                            printsData.map((sample, index) => (
-                                <Link href={`/prints/${index}`} key={index}>
-                                    <div
-                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[14rem]"
-                                        style={positions[index]}
-                                        onClick={(event) => handleImageClick(event, index)}
-                                    >
-                                        <ImageCard src={sample.src} alt={sample.alt} />
-                                    </div>
-                                </Link>
-                            ))
-                        ) : (
-                            <p>No data available</p>
-                        )}
-                    </div>
+                <div className="block md:hidden">
+                    <SlidePage data={printsData} />
+                </div>
+                <div className='hidden md:block '>
+                <div className="relative w-full h-full mt-24">
+                    {printsData.length > 0 ? (
+                        printsData.map((sample, index) => (
+                            <Link href={`/prints/${index}`} key={index}>
+                                <div
+                                    className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[14rem]"
+                                    style={positions[index]}
+                                    onClick={(event) => handleImageClick(event, index)}
+                                >
+                                    <ImageCard src={sample.src} alt={sample.alt} />
+                                </div>
+                            </Link>
+                        ))
+                    ) : (
+                        <p>No data available</p>
+                    )}
                 </div>
                 <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
                     <ProjectScroll />
+                </div>
                 </div>
             </div>
             <Footer />

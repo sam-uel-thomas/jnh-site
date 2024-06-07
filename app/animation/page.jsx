@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
 import animationData from '../data/animationData'
+import ProjectScroll from '../components/ProjectScroll'
 import Link from 'next/link'
 
 const animation = () => {
@@ -29,6 +30,9 @@ const animation = () => {
                             <p>No data available</p>
                         )}
                     </div>
+                </div>
+                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
+                    <ProjectScroll />
                 </div>
             </div>
             <Footer />
