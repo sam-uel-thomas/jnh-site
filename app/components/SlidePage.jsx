@@ -59,7 +59,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           <NavButton onClick={goPrevImage} disabled={!canGoPrev} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
-          <NavButton onClick={goNextImage} disabled={!canGoNext} direction="right">
+          <NavButton onClick={goNextImage} disabled={!canGoNext} direction="left">
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
