@@ -38,8 +38,8 @@ export default function Page({ params }) {
                             key={photoIndex} 
                             src={sample.photos[photoIndex]} 
                             alt={sample.alt}
-                            layout="responsive" // This will make the image scale based on its container's width
-                            width={80} // Adjust these values to match your images' aspect ratio
+                            layout="responsive"
+                            width={80}
                             height={83} 
                         />
                         <button onClick={handlePrevPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"></button>

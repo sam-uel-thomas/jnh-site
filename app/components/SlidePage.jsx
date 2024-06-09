@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProjectScroll from '../components/ProjectScroll';
@@ -8,15 +8,11 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   const [imageNumber, setImageNumber] = useState(0);
 
   const goPrevImage = () => {
-    if (imageNumber > 0) {
-      setImageNumber((prev) => prev - 1);
-    }
+    setImageNumber((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   };
 
   const goNextImage = () => {
-    if (imageNumber < data.length - 1) {
-      setImageNumber((prev) => prev + 1);
-    }
+    setImageNumber((prevIndex) => (prevIndex + 1) % data.length);
   };
 
   const canGoPrev = imageNumber > 0;
@@ -33,16 +29,30 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
-        <div className="order-1 md:order-2">
+        <div className="order-1 md:order-2 w-full md:w-[36rem]">
           {isImageClickable ? (
             <Link href={`/${link}/${imageNumber}`} className="block">
-              <div className="relative w-700 h-100">
-                <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
+              <div className="relative">
+                <Image 
+                    key={imageNumber} 
+                    src={data[imageNumber].src} 
+                    alt={data[imageNumber].alt} 
+                    layout="responsive"
+                    width={90}
+                    height={81} 
+                />
               </div>
             </Link>
           ) : (
-            <div className="relative w-700 h-100">
-              <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
+            <div className="relative">
+              <Image 
+                key={imageNumber} 
+                src={data[imageNumber].src} 
+                alt={data[imageNumber].alt} 
+                layout="responsive"
+                width={90}
+                height={81} 
+              />
             </div>
           )}
         </div>
