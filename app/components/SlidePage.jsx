@@ -80,7 +80,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
 const NavButton = ({ onClick, disabled, children, direction = 'r' }) => {
   return (
     <button 
-      className={`w-32 h-32 mx-8 animate-bobbing-${direction} ${disabled ? 'opacity-0 cursor-default' : ''}`} 
+      className={`w-32 h-32 mx-8 animate-bobbing-r ${disabled ? 'opacity-0 cursor-default' : ''}`} 
       onClick={onClick}
       disabled={disabled}
     >
