@@ -12,7 +12,7 @@ const shop = () => {
             <div className='bg-white flex flex-col justify-between min-h-[100dvh] overflow-x-hidden'>
                 <Navbar />
                 <div className="relative flex flex-col justify-end items-center w-full pt-0 md:pt-8 px-4 md:px-12 mb-5 z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 row-gap-6 gap-y-8 md:gap-y-12 mt-8 justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 md:gap-x-12 row-gap-6 gap-y-8 md:gap-y-12 mt-8 justify-center">
                         {shopData.length > 0 ? (
                             shopData.map((sample, index) => (
                                 <Link href={`/shop/${index}`} key={index} className='flex justify-center items-center'>
