@@ -6,26 +6,6 @@ import ProjectScroll from '../components/ProjectScroll';
 
 const SlidePage = ({ data, link, isImageClickable = true }) => {
   const [imageNumber, setImageNumber] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  const preloadImage = (src) => {
-    return new Promise((resolve) => {
-      const img = new window.Image();
-      img.src = src;
-      img.onload = resolve;
-    });
-  };
-
-  const preloadAdjacentImages = (index) => {
-    const promises = [];
-    if (index > 0) {
-      promises.push(preloadImage(data[index - 1].src));
-    }
-    if (index < data.length - 1) {
-      promises.push(preloadImage(data[index + 1].src));
-    }
-    return promises;
-  };
 
   const goPrevImage = () => {
     if (imageNumber > 0) {
@@ -38,16 +18,6 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
       setImageNumber((prev) => prev + 1);
     }
   };
-
-  useEffect(() => {
-    const loadImages = async () => {
-      await preloadImage(data[imageNumber].src);
-      setLoading(false);
-      await Promise.all(preloadAdjacentImages(imageNumber));
-    };
-
-    loadImages();
-  }, [data, imageNumber]);
 
   const canGoPrev = imageNumber > 0;
   const canGoNext = imageNumber < data.length - 1;
@@ -67,21 +37,11 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           {isImageClickable ? (
             <Link href={`/${link}/${imageNumber}`} className="block">
               <div className="relative w-700 h-100">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {loading ? (
-                    <div className="loader">Loading...</div>
-                  ) : null}
-                </div>
                 <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
               </div>
             </Link>
           ) : (
             <div className="relative w-700 h-100">
-              <div className="absolute inset-0 flex items-center justify-center">
-                {loading ? (
-                  <div className="loader">Loading...</div>
-                ) : null}
-              </div>
               <Image src={data[imageNumber].src} width={700} height={100} alt={data[imageNumber].alt} />
             </div>
           )}
