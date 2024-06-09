@@ -18,7 +18,7 @@ module.exports = {
 		animation: {
 			'infinite-scroll': 'infinite-scroll 40s linear infinite',
             'bobbing-left': 'bobbing-left 1s ease-in-out infinite',
-            'bobbing-right': 'bobbing-right 1s ease-in-out infinite',
+            'bobbing-r': 'bobbing-r 1s ease-in-out infinite',
 		},
 		keyframes: {
 			'infinite-scroll': {
@@ -29,7 +29,7 @@ module.exports = {
                 '0%, 100%': { transform: 'translateX(0)' },
                 '50%': { transform: 'translateX(-10px)' },
             },
-            'bobbing-right': {
+            'bobbing-r': {
                 '0%, 100%': { transform: 'translateX(0)' },
                 '50%': { transform: 'translateX(10px)' },
             },

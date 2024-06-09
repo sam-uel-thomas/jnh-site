@@ -29,7 +29,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           <NavButton onClick={goPrevImage} disabled={!canGoPrev} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
-          <NavButton onClick={goNextImage} disabled={!canGoNext} direction="left">
+          <NavButton onClick={goNextImage} disabled={!canGoNext}>
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
@@ -52,7 +52,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           </NavButton>
         </div>
         <div className="hidden md:flex md:order-3 md:flex-shrink-0">
-          <NavButton onClick={goNextImage} disabled={!canGoNext} direction="left">
+          <NavButton onClick={goNextImage} disabled={!canGoNext}>
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
@@ -67,7 +67,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   );
 };
 
-const NavButton = ({ onClick, disabled, children, direction }) => {
+const NavButton = ({ onClick, disabled, children, direction = 'r' }) => {
   return (
     <button 
       className={`w-32 h-32 mx-8 animate-bobbing-${direction} ${disabled ? 'opacity-0 cursor-default' : ''}`} 
