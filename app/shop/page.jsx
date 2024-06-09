@@ -17,7 +17,7 @@ const shop = () => {
                             shopData.map((sample, index) => (
                                 <Link href={`/shop/${index}`} key={index} className='flex justify-center items-center'>
                                     <div className="w-full h-auto">
-                                        <ImageCard src={sample.src} alt={sample.alt} title={`${index+1}: ${sample.title}`} />
+                                        <ImageCard src={sample.src} alt={sample.alt} title={`${sample.title}`} className={"font-semibold"}/>
                                     </div>
                                 </Link>
                             ))

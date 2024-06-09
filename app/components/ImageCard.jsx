@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const ImageCard = ({ src, hoverSrc, alt, title }) => {
+const ImageCard = ({ src, hoverSrc, alt, title, className }) => {
     const [currentSrc, setCurrentSrc] = useState(src);
     let timeoutId = null;
 
@@ -23,7 +23,7 @@ const ImageCard = ({ src, hoverSrc, alt, title }) => {
 
     return (
         <div 
-            className='flex flex-col transform transition-transform duration-500 hover:scale-105'
+            className={`flex flex-col transform transition-transform duration-500 hover:scale-105 ${className}`}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
         >
