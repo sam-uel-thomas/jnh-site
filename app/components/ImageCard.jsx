@@ -33,7 +33,7 @@ const ImageCard = ({ src, hoverSrc, alt, title, className }) => {
                 width={1080}
                 height={1920}
             />
-            <span className='mt-2 text-black uppercase'>{title}</span>
+            <span className='mt-2 text-black text-xs md:text-base uppercase'>{title}</span>
         </div>
     );
 }

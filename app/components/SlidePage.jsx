@@ -68,7 +68,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
         </div>
       </div>
       <div className="self-start">
-        <span className='font-semibold text-s mb-4 ml-8 text-left text-orange'>PHOTOGRAPHY : BANDINI3000</span>
+        <span className='font-semibold text-s mb-4 ml-8 text-left text-orange'>PHOTOGRAPHY : GUY BOLONGARO</span>
       </div>
       <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
         <ProjectScroll />
