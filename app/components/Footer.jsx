@@ -1,23 +1,42 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faPinterest, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
+import emailjs from 'emailjs-com';
 
 const Footer = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [responseMessage, setResponseMessage] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const templateParams = {
+            from_name: name,
+            message: message,
+            reply_to: email,
+        };
+
+        emailjs.send('service_cv215gb', 'template_8os7u3u', templateParams, 'OKJ9Ybo7t4gAzD95e')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                setResponseMessage('Message sent successfully!');
+                setName('');
+                setEmail('');
+                setMessage('');
+            }, (err) => {
+                console.error('FAILED...', err);
+                setResponseMessage(`Error: ${err.text}`);
+            });
     };
 
     return (
         <div className='relative overflow-hidden h-auto md:h-96 flex flex-col justify-between -mt-1 md:-mt-2 bg-white'>
-
             <div className='hidden md:flex flex-col flex-grow'>
                 <img src="/jnhStitchLong.png" alt="JNH Rectangle" className="w-full h-auto object-cover relative z-10"/>
                 <div className='absolute top-2 lg:top-16 left-0 w-full z-10 flex flex-row px-8 pt-4 flex-grow'>
@@ -35,6 +54,7 @@ const Footer = () => {
                                 <FontAwesomeIcon icon={faPaperPlane} size='2x' />
                             </button>
                         </form>
+                        {responseMessage && <p>{responseMessage}</p>}
                     </div>
                 </div>
             </div>
