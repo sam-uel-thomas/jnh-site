@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProjectScroll from '../components/ProjectScroll';
@@ -18,6 +18,14 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   const canGoPrev = imageNumber > 0;
   const canGoNext = imageNumber < data.length - 1;
 
+  // Preload next and previous images
+  useEffect(() => {
+    const nextImage = new window.Image();
+    nextImage.src = data[(imageNumber + 1) % data.length].src;
+    const prevImage = new window.Image();
+    prevImage.src = data[(imageNumber - 1 + data.length) % data.length].src;
+  }, [imageNumber, data]);
+
   return (
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
@@ -34,12 +42,13 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
             <Link href={`/${link}/${imageNumber}`} className="block">
               <div className="relative">
                 <Image 
-                    key={imageNumber} 
-                    src={data[imageNumber].src} 
-                    alt={data[imageNumber].alt} 
-                    layout="responsive"
-                    width={90}
-                    height={81} 
+                  key={imageNumber} 
+                  src={data[imageNumber].src} 
+                  alt={data[imageNumber].alt} 
+                  layout="responsive" 
+                  width={90} 
+                  height={81} 
+                  priority={true} // Load the current image with high priority
                 />
               </div>
             </Link>
@@ -49,9 +58,10 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                 key={imageNumber} 
                 src={data[imageNumber].src} 
                 alt={data[imageNumber].alt} 
-                layout="responsive"
-                width={90}
+                layout="responsive" 
+                width={90} 
                 height={81} 
+                priority={true} // Load the current image with high priority
               />
             </div>
           )}
@@ -68,7 +78,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
         </div>
       </div>
       <div className="self-start">
-        <span className='font-semibold text-s mb-4 ml-8 text-left text-orange'>PHOTOGRAPHY : GUY BOLONGARO</span>
+        <span className="font-semibold text-s mb-4 ml-8 text-left text-orange">PHOTOGRAPHY : GUY BOLONGARO</span>
       </div>
       <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
         <ProjectScroll />
@@ -78,17 +88,16 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
 };
 
 const NavButton = ({ onClick, disabled, children, direction = 'r' }) => {
-    const animationClass = direction === 'left' ? 'animate-bobbing-left' : 'animate-bobbing-r';
-    return (
-      <button 
-        className={`w-32 h-32 mx-8 ${animationClass} ${disabled ? 'opacity-0 cursor-default' : ''}`} 
-        onClick={onClick}
-        disabled={disabled}
-      >
-        {children}
-      </button>
-    );
-  };
-  
+  const animationClass = direction === 'left' ? 'animate-bobbing-left' : 'animate-bobbing-r';
+  return (
+    <button 
+      className={`w-32 h-32 mx-8 ${animationClass} ${disabled ? 'opacity-0 cursor-default' : ''}`} 
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default SlidePage;
