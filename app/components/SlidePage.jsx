@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProjectScroll from '../components/ProjectScroll';
@@ -7,21 +7,21 @@ import ProjectScroll from '../components/ProjectScroll';
 const SlidePage = ({ data, link, isImageClickable = true }) => {
   const [imageNumber, setImageNumber] = useState(0);
 
-  const goPrevImage = () => {
+  const goPrevImage = useCallback(() => {
     setImageNumber((prevIndex) => (prevIndex - 1 + data.length) % data.length);
-  };
+  }, [data.length]);
 
-  const goNextImage = () => {
+  const goNextImage = useCallback(() => {
     setImageNumber((prevIndex) => (prevIndex + 1) % data.length);
-  };
+  }, [data.length]);
 
-  const canGoPrev = imageNumber > 0;
-  const canGoNext = imageNumber < data.length - 1;
-
-  // Preload next and previous images
   useEffect(() => {
+    const currentImage = new window.Image();
+    currentImage.src = data[imageNumber].src;
+
     const nextImage = new window.Image();
     nextImage.src = data[(imageNumber + 1) % data.length].src;
+
     const prevImage = new window.Image();
     prevImage.src = data[(imageNumber - 1 + data.length) % data.length].src;
   }, [imageNumber, data]);
@@ -30,10 +30,10 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
         <div className="md:hidden flex flex-row justify-center mt-4 order-3">
-          <NavButton onClick={goPrevImage} disabled={!canGoPrev} direction="left">
+          <NavButton onClick={goPrevImage} disabled={imageNumber === 0} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
-          <NavButton onClick={goNextImage} disabled={!canGoNext} direction="right">
+          <NavButton onClick={goNextImage} disabled={imageNumber === data.length - 1} direction="right">
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
@@ -42,7 +42,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
             <Link href={`/${link}/${imageNumber}`} className="block">
               <div className="relative">
                 <Image 
-                  key={imageNumber} 
+                  key={data[imageNumber].src} 
                   src={data[imageNumber].src} 
                   alt={data[imageNumber].alt} 
                   layout="responsive" 
@@ -55,7 +55,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           ) : (
             <div className="relative">
               <Image 
-                key={imageNumber} 
+                key={data[imageNumber].src} 
                 src={data[imageNumber].src} 
                 alt={data[imageNumber].alt} 
                 layout="responsive" 
@@ -67,12 +67,12 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           )}
         </div>
         <div className="hidden md:flex md:order-1 md:flex-shrink-0">
-          <NavButton onClick={goPrevImage} disabled={!canGoPrev} direction="left">
+          <NavButton onClick={goPrevImage} disabled={imageNumber === 0} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
         <div className="hidden md:flex md:order-3 md:flex-shrink-0">
-          <NavButton onClick={goNextImage} disabled={!canGoNext} direction="right">
+          <NavButton onClick={goNextImage} disabled={imageNumber === data.length - 1} direction="right">
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
@@ -87,7 +87,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   );
 };
 
-const NavButton = ({ onClick, disabled, children, direction = 'r' }) => {
+const NavButton = React.memo(({ onClick, disabled, children, direction = 'r' }) => {
   const animationClass = direction === 'left' ? 'animate-bobbing-left' : 'animate-bobbing-r';
   return (
     <button 
@@ -98,6 +98,6 @@ const NavButton = ({ onClick, disabled, children, direction = 'r' }) => {
       {children}
     </button>
   );
-};
+});
 
-export default SlidePage;
+export default React.memo(SlidePage);
