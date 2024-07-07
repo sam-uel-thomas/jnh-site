@@ -68,10 +68,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                 alt={data[imageNumber].alt} 
                 layout="responsive" 
                 width={90} 
-                layout="responsive" 
-                width={90} 
                 height={81} 
-                priority={true} // Load the current image with high priority
                 priority={true} // Load the current image with high priority
               />
             </div>
