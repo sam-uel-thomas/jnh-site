@@ -26,6 +26,14 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
     prevImage.src = data[(imageNumber - 1 + data.length) % data.length].src;
   }, [imageNumber, data]);
 
+  // Preload next and previous images
+  useEffect(() => {
+    const nextImage = new window.Image();
+    nextImage.src = data[(imageNumber + 1) % data.length].src;
+    const prevImage = new window.Image();
+    prevImage.src = data[(imageNumber - 1 + data.length) % data.length].src;
+  }, [imageNumber, data]);
+
   return (
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
@@ -60,7 +68,10 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                 alt={data[imageNumber].alt} 
                 layout="responsive" 
                 width={90} 
+                layout="responsive" 
+                width={90} 
                 height={81} 
+                priority={true} // Load the current image with high priority
                 priority={true} // Load the current image with high priority
               />
             </div>
@@ -78,6 +89,7 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
         </div>
       </div>
       <div className="self-start">
+        <span className="font-semibold text-s mb-4 ml-8 text-left text-orange">PHOTOGRAPHY : GUY BOLONGARO</span>
         <span className="font-semibold text-s mb-4 ml-8 text-left text-orange">PHOTOGRAPHY : GUY BOLONGARO</span>
       </div>
       <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
