@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -26,61 +25,56 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
     prevImage.src = data[(imageNumber - 1 + data.length) % data.length].src;
   }, [imageNumber, data]);
 
-  // Preload next and previous images
-  useEffect(() => {
-    const nextImage = new window.Image();
-    nextImage.src = data[(imageNumber + 1) % data.length].src;
-    const prevImage = new window.Image();
-    prevImage.src = data[(imageNumber - 1 + data.length) % data.length].src;
-  }, [imageNumber, data]);
-
   return (
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
         <div className="md:hidden flex flex-row justify-center mt-4 order-3">
-          <NavButton onClick={goPrevImage} disabled={imageNumber === 0} direction="left">
+          <NavButton onClick={goPrevImage} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
-          <NavButton onClick={goNextImage} disabled={imageNumber === data.length - 1} direction="right">
+          <NavButton onClick={goNextImage} direction="right">
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
-        <div className="order-1 md:order-2 w-full md:w-[36rem]">
-          {isImageClickable ? (
-            <Link href={`/${link}/${imageNumber}`} className="block">
-              <div className="relative">
+        <div className="order-1 md:order-2 w-full md:w-[36rem] flex items-center justify-center relative" style={{ height: 'auto' }}>
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 flex items-center justify-center ${index === imageNumber ? 'opacity-100' : 'opacity-0'}`}
+            >
+              {isImageClickable ? (
+                <Link href={`/${link}/${index}`} className="block">
+                  <Image 
+                    src={item.src} 
+                    alt={item.alt} 
+                    width={900} 
+                    height={810} 
+                    priority={index === imageNumber}
+                    placeholder="blur"
+                    blurDataURL={item.blurSrc} // Ensure blurSrc is provided in the data
+                  />
+                </Link>
+              ) : (
                 <Image 
-                  key={data[imageNumber].src} 
-                  src={data[imageNumber].src} 
-                  alt={data[imageNumber].alt} 
-                  layout="responsive" 
-                  width={90} 
-                  height={81} 
-                  priority={true} // Load the current image with high priority
+                  src={item.src} 
+                  alt={item.alt} 
+                  width={900} 
+                  height={810} 
+                  priority={index === imageNumber}
+                  placeholder="blur"
+                  blurDataURL={item.blurSrc}
                 />
-              </div>
-            </Link>
-          ) : (
-            <div className="relative">
-              <Image 
-                key={data[imageNumber].src} 
-                src={data[imageNumber].src} 
-                alt={data[imageNumber].alt} 
-                layout="responsive" 
-                width={90} 
-                height={81} 
-                priority={true} // Load the current image with high priority
-              />
+              )}
             </div>
-          )}
+          ))}
         </div>
         <div className="hidden md:flex md:order-1 md:flex-shrink-0">
-          <NavButton onClick={goPrevImage} disabled={imageNumber === 0} direction="left">
+          <NavButton onClick={goPrevImage} direction="left">
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
         <div className="hidden md:flex md:order-3 md:flex-shrink-0">
-          <NavButton onClick={goNextImage} disabled={imageNumber === data.length - 1} direction="right">
+          <NavButton onClick={goNextImage} direction="right">
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
