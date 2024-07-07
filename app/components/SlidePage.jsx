@@ -29,10 +29,10 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
         <div className="md:hidden flex flex-row justify-center mt-4 order-3">
-          <NavButton onClick={goPrevImage} direction="left">
+          <NavButton onClick={goPrevImage} direction="left" isVisible={imageNumber > 0}>
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
-          <NavButton onClick={goNextImage} direction="right">
+          <NavButton onClick={goNextImage} direction="right" isVisible={imageNumber < data.length - 1}>
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
@@ -69,12 +69,12 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
           ))}
         </div>
         <div className="hidden md:flex md:order-1 md:flex-shrink-0">
-          <NavButton onClick={goPrevImage} direction="left">
+          <NavButton onClick={goPrevImage} direction="left" isVisible={imageNumber > 0}>
             <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
         <div className="hidden md:flex md:order-3 md:flex-shrink-0">
-          <NavButton onClick={goNextImage} direction="right">
+          <NavButton onClick={goNextImage} direction="right" isVisible={imageNumber < data.length - 1}>
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
@@ -89,13 +89,13 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   );
 };
 
-const NavButton = React.memo(({ onClick, disabled, children, direction = 'r' }) => {
+const NavButton = React.memo(({ onClick, isVisible, children, direction = 'r' }) => {
   const animationClass = direction === 'left' ? 'animate-bobbing-left' : 'animate-bobbing-r';
   return (
     <button 
-      className={`w-32 h-32 mx-8 ${animationClass} ${disabled ? 'opacity-0 cursor-default' : ''}`} 
-      onClick={onClick}
-      disabled={disabled}
+      className={`w-32 h-32 mx-8 ${animationClass} ${!isVisible ? 'invisible' : ''}`} 
+      onClick={isVisible ? onClick : null}
+      disabled={!isVisible}
     >
       {children}
     </button>
