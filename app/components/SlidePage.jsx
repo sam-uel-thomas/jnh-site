@@ -1,9 +1,21 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProjectScroll from '../components/ProjectScroll';
 
+/**
+ * Renders a slide page component with image navigation and photography credits.
+ *
+ * @component
+ * @param {Object[]} data - An array of objects containing image data.
+ * @param {string} data[].src - The source URL of the image.
+ * @param {string} data[].alt - The alt text for the image.
+ * @param {string} data[].blurSrc - The blur data URL for the image.
+ * @param {string} link - The link for the image.
+ * @param {boolean} [isImageClickable=true] - Determines if the image is clickable.
+ * @returns {JSX.Element} The rendered SlidePage component.
+ */
 const SlidePage = ({ data, link, isImageClickable = true }) => {
   const [imageNumber, setImageNumber] = useState(0);
 
@@ -29,27 +41,19 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   return (
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
-        <div className="md:hidden flex flex-row justify-center mt-4 order-3">
-          <NavButton onClick={goPrevImage} direction="left" isVisible={imageNumber > 0}>
-            <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
-          </NavButton>
-          <NavButton onClick={goNextImage} direction="right" isVisible={imageNumber < data.length - 1}>
-            <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
-          </NavButton>
-        </div>
-        <div className="order-1 md:order-2 w-full md:w-[36rem] flex items-center justify-center relative" style={{ height: 'auto' }}>
+        <div className="order-1 md:order-2 w-full md:w-[36rem] flex items-center justify-center relative" style={{ height: '300px', padding: '0 1rem' }}>
           {data.map((item, index) => (
             <div
               key={index}
               className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 flex items-center justify-center ${index === imageNumber ? 'opacity-100' : 'opacity-0'}`}
             >
               {isImageClickable ? (
-                <Link href={`/${link}/${index}`} className="block">
+                <Link href={`/${link}/${index}`} className="block w-full h-full">
                   <Image 
                     src={item.src} 
                     alt={item.alt} 
-                    width={900} 
-                    height={810} 
+                    layout="fill"
+                    objectFit="contain"
                     priority={index === imageNumber}
                     placeholder="blur"
                     blurDataURL={item.blurSrc} // Ensure blurSrc is provided in the data
@@ -59,8 +63,8 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                 <Image 
                   src={item.src} 
                   alt={item.alt} 
-                  width={900} 
-                  height={810} 
+                  layout="fill"
+                  objectFit="contain"
                   priority={index === imageNumber}
                   placeholder="blur"
                   blurDataURL={item.blurSrc}
@@ -79,11 +83,19 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
             <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
           </NavButton>
         </div>
+        <div className="md:hidden flex flex-row justify-center mt-2 w-full order-2">
+          <NavButton onClick={goPrevImage} direction="left" isVisible={imageNumber > 0}>
+            <Image src="/portfolio/leftHand.png" alt="Previous" width={50} height={50} className="w-full h-full object-contain" />
+          </NavButton>
+          <NavButton onClick={goNextImage} direction="right" isVisible={imageNumber < data.length - 1}>
+            <Image src="/portfolio/rightHand.png" alt="Next" width={50} height={50} className="w-full h-full object-contain" />
+          </NavButton>
+        </div>
       </div>
-      <div className="self-start">
+      <div className="self-start mt-4 md:mt-0 order-4">
         <span className="font-semibold text-s mb-4 ml-8 text-left text-orange">PHOTOGRAPHY : GUY BOLONGARO</span>
       </div>
-      <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
+      <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10 order-5">
         <ProjectScroll />
       </div>
     </>
