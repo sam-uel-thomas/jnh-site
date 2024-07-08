@@ -41,14 +41,26 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
   return (
     <>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
-        <div className="order-1 md:order-2 w-full md:w-[36rem] flex items-center justify-center relative" style={{ height: '300px', padding: '0 1rem' }}>
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 flex items-center justify-center ${index === imageNumber ? 'opacity-100' : 'opacity-0'}`}
-            >
-              {isImageClickable ? (
-                <Link href={`/${link}/${index}`} className="block w-full h-full">
+        <div className="order-1 md:order-2 w-full md:w-[36rem] flex items-center justify-center relative" style={{ height: 'auto', padding: '0 1rem' }}>
+          <div className="relative w-full" style={{ paddingTop: '66.67%' }}>
+            {data.map((item, index) => (
+              <div
+                key={index}
+                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 flex items-center justify-center ${index === imageNumber ? 'opacity-100' : 'opacity-0'}`}
+              >
+                {isImageClickable ? (
+                  <Link href={`/${link}/${index}`} className="block w-full h-full">
+                    <Image 
+                      src={item.src} 
+                      alt={item.alt} 
+                      layout="fill"
+                      objectFit="contain"
+                      priority={index === imageNumber}
+                      placeholder="blur"
+                      blurDataURL={item.blurSrc} // Ensure blurSrc is provided in the data
+                    />
+                  </Link>
+                ) : (
                   <Image 
                     src={item.src} 
                     alt={item.alt} 
@@ -56,22 +68,12 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                     objectFit="contain"
                     priority={index === imageNumber}
                     placeholder="blur"
-                    blurDataURL={item.blurSrc} // Ensure blurSrc is provided in the data
+                    blurDataURL={item.blurSrc}
                   />
-                </Link>
-              ) : (
-                <Image 
-                  src={item.src} 
-                  alt={item.alt} 
-                  layout="fill"
-                  objectFit="contain"
-                  priority={index === imageNumber}
-                  placeholder="blur"
-                  blurDataURL={item.blurSrc}
-                />
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="hidden md:flex md:order-1 md:flex-shrink-0">
           <NavButton onClick={goPrevImage} direction="left" isVisible={imageNumber > 0}>
