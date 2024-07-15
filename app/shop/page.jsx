@@ -5,10 +5,18 @@ import ImageCard from '../components/ImageCard'
 import ProjectScroll from '../components/ProjectScroll'
 import shopData from './shopData'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const shop = () => {
     return (
         <div>
+            <Head>
+                <title>Shop</title>
+                <meta name="description" content="Browse our collection of fabric samples in our shop." />
+                <meta property="og:title" content="Shop" />
+                <meta property="og:description" content="Browse our collection of fabric samples in our shop." />
+                <meta property="og:type" content="website" />
+            </Head>
             <div className='bg-white flex flex-col justify-between min-h-[100dvh] overflow-x-hidden'>
                 <Navbar />
                 <div className="relative flex flex-col justify-end items-center w-full pt-0 md:pt-8 px-4 md:px-12 mb-5 z-10">

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function Navbar() {
     const shopImg = '/logos/shop.png';
@@ -15,33 +16,42 @@ export default function Navbar() {
     const navLinkClasses = "text-black font-bold text-xl uppercase no-underline";
 
     return (
-        <div className={"w-full mt-0 md:mt-4 pl-2 md:pl-8 pr-8 flex items-center justify-between text-white z-50 sticky"}>
-            <ul className={navLinksClasses}>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2'> {/* Add mx-2 for horizontal margin */}
-                    <Link href="/shop">
-                        <Image src={shopImg} alt="Shop" width={150} height={150} />
-                    </Link>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2'> {/* Add mx-2 for horizontal margin */}
-                    <Link href="/portfolio">
-                        <Image src={portfolioImg} alt="Portfolio" width={150} height={150} />
-                    </Link>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2 md:block hidden'> {/* Add mx-2 for horizontal margin */}
-                    <Link href="/about">
-                        <Image src={aboutImg} alt="About" width={150} height={150} />
-                    </Link>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2'> {/* Add mx-2 for horizontal margin */}
-                    <Link href="https://www.instagram.com/jonahdavies.2/" target="_blank" rel="noopener noreferrer" className={navLinkClasses}>
-                        <Image src={instagramImg} alt="Instagram" width={150} height={150} />
-                    </Link>
-                </li>
-            </ul>
+        <>
+            <Head>
+                <title>Home</title>
+                <meta name="description" content="Welcome to our homepage. Explore our shop, portfolio, and learn more about us." />
+                <meta property="og:title" content="Home" />
+                <meta property="og:description" content="Welcome to our homepage. Explore our shop, portfolio, and learn more about us." />
+                <meta property="og:type" content="website" />
+            </Head>
+            <nav className={"w-full mt-0 md:mt-4 pl-2 md:pl-8 pr-8 flex items-center justify-between text-white z-50 sticky"}>
+                <ul className={navLinksClasses}>
+                    <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2'> {/* Add mx-2 for horizontal margin */}
+                        <Link href="/shop">
+                            <Image src={shopImg} alt="Shop" width={150} height={150} />
+                        </Link>
+                    </li>
+                    <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2'> {/* Add mx-2 for horizontal margin */}
+                        <Link href="/portfolio">
+                            <Image src={portfolioImg} alt="Portfolio" width={150} height={150} />
+                        </Link>
+                    </li>
+                    <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2 md:block hidden'> {/* Add mx-2 for horizontal margin */}
+                        <Link href="/about">
+                            <Image src={aboutImg} alt="About" width={150} height={150} />
+                        </Link>
+                    </li>
+                    <li className='hover:scale-110 transition-transform duration-500 ease-in-out mx-2'> {/* Add mx-2 for horizontal margin */}
+                        <Link href="https://www.instagram.com/jonahdavies.2/" target="_blank" rel="noopener noreferrer" className={navLinkClasses}>
+                            <Image src={instagramImg} alt="Instagram" width={150} height={150} />
+                        </Link>
+                    </li>
+                </ul>
 
-            <Link href="/" className={logoClasses}>
-                <Image src={logoImg} alt="JNH Logo" width={128} height={128} /> {/* Adjust the logo size here */}
-            </Link>
-        </div>
+                <Link href="/" className={logoClasses}>
+                    <Image src={logoImg} alt="JNH Logo" width={128} height={128} /> {/* Adjust the logo size here */}
+                </Link>
+            </nav>
+        </>
     );
 }

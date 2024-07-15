@@ -8,10 +8,12 @@ import Link from 'next/link'
 import ArrowLink from '../../components/ArrowLink'
 import ProjectScroll from '../../components/ProjectScroll'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function Page({ params }) {
     const sample = shopData[Number(params.sampleId)];
     const [photoIndex, setPhotoIndex] = useState(0);
+    const pageTitle = sample ? `Shop - ${sample.title}` : 'Shop';
     
     if (!sample) {
         return <h1>No fabric sample found for id {params.sampleId}</h1>;
@@ -25,9 +27,16 @@ export default function Page({ params }) {
         setPhotoIndex((prevIndex) => (prevIndex - 1 + sample.photos.length) % sample.photos.length);
     };
 
-
     return (
         <>
+            <Head>
+                <title>{pageTitle}</title>
+                <meta name="description" content="Detailed view of a fabric sample from our shop." />
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content="Detailed view of a fabric sample from our shop." />
+                <meta property="og:image" content={sample ? sample.photos[photoIndex] : ''} />
+                <meta property="og:type" content="website" />
+            </Head>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
                 <ArrowLink href={"/shop"} width={70} height={70} top={0} left={0} className="md:hidden" />

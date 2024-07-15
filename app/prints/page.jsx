@@ -8,6 +8,7 @@ import printsData from '../data/printsData'
 import Link from 'next/link'
 import Image from 'next/image'
 import SlidePage from '../components/SlidePage'
+import Head from 'next/head'
 
 const predefinedPositions = [
     { left: '50%', top: '38%' }, //1
@@ -49,6 +50,13 @@ const Prints = () => {
 
     return (
         <div>
+            <Head>
+                <title>Prints</title>
+                <meta name="description" content="Explore our collection of prints." />
+                <meta property="og:title" content="Prints" />
+                <meta property="og:description" content="Explore our collection of prints." />
+                <meta property="og:type" content="website" />
+            </Head>
             <div className='bg-white flex flex-col justify-between h-screen overflow-x-hidden'>
                 <Navbar />
                 <div className="block md:hidden">

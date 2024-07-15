@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 import ProjectScroll from '../components/ProjectScroll';
 
 /**
@@ -40,9 +41,16 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
 
   return (
     <>
+      <Head>
+        <title>Slide Page</title>
+        <meta name="description" content="Explore our slide page with image navigation and photography credits." />
+        <meta property="og:title" content="Slide Page" />
+        <meta property="og:description" content="Explore our slide page with image navigation and photography credits." />
+        <meta property="og:type" content="website" />
+      </Head>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
         <div className="order-1 md:order-2 w-full md:w-[36rem] flex items-center justify-center relative" style={{ height: 'auto', padding: '0 1rem' }}>
-          <div className="relative w-full" style={{ paddingTop: '66.67%' }}>
+          <div className="relative w-full" style={{ paddingTop: '100%' }}>
             {data.map((item, index) => (
               <div
                 key={index}
@@ -56,8 +64,8 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                       layout="fill"
                       objectFit="contain"
                       priority={index === imageNumber}
-                      placeholder="blur"
-                      blurDataURL={item.blurSrc} // Ensure blurSrc is provided in the data
+                    //   placeholder="blur"
+                    //   blurDataURL={item.blurSrc} // Ensure blurSrc is provided in the data
                     />
                   </Link>
                 ) : (
@@ -67,8 +75,8 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
                     layout="fill"
                     objectFit="contain"
                     priority={index === imageNumber}
-                    placeholder="blur"
-                    blurDataURL={item.blurSrc}
+                    // placeholder="blur"
+                    // blurDataURL={item.blurSrc}
                   />
                 )}
               </div>

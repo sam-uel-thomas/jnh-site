@@ -36,7 +36,7 @@ const Footer = () => {
     };
 
     return (
-        <div className='relative overflow-hidden h-auto md:h-96 flex flex-col justify-between -mt-1 md:-mt-2 bg-white'>
+        <footer className='relative overflow-hidden h-auto md:h-96 flex flex-col justify-between -mt-1 md:-mt-2 bg-white'>
             <div className='hidden md:flex flex-col flex-grow'>
                 <img src="/jnhStitchLong.png" alt="JNH Rectangle" className="w-full h-auto object-cover relative z-10"/>
                 <div className='absolute top-2 lg:top-16 left-0 w-full z-10 flex flex-row px-8 pt-4 flex-grow'>
@@ -82,7 +82,7 @@ const Footer = () => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 

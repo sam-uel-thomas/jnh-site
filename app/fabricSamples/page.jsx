@@ -7,6 +7,7 @@ import ProjectScroll from '../components/ProjectScroll';
 import Link from 'next/link';
 import fabricSamplesData from '../data/fabricSamplesData';
 import ArrowLink from '../components/ArrowLink';
+import Head from 'next/head';
 
 const FabricSamples = () => {
     const [chunkSize, setChunkSize] = useState(3);
@@ -46,6 +47,13 @@ const FabricSamples = () => {
 
     return (
         <div>
+            <Head>
+                <title>Fabric Samples</title>
+                <meta name="description" content="Browse our collection of fabric samples." />
+                <meta property="og:title" content="Fabric Samples" />
+                <meta property="og:description" content="Browse our collection of fabric samples." />
+                <meta property="og:type" content="website" />
+            </Head>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
                 <div className=" space-y-24 md:space-y-32 mb-24">
@@ -58,7 +66,7 @@ const FabricSamples = () => {
                                 {rail.map((sample) => (
                                     <div key={sample.index} className="w-1/2 md:w-1/3 lg:w-1/4 -mt-4 p-2">
                                         <Link href={`/fabricSamples/${sample.index}`}>
-                                            <ImageCard src={sample.src} alt={`Photo ${sample.index + 1}`} />
+                                            <ImageCard src={sample.src} alt={`Fabric Sample ${sample.index + 1}`} />
                                         </Link>
                                     </div>
                                 ))}

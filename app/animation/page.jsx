@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
@@ -9,9 +10,13 @@ import Link from 'next/link'
 const animation = () => {
     return (
         <div>
-            <div className='bg-white flex flex-col justify-between min-h-[100dvh]'>
+            <Head>
+                <title>Animation Page</title>
+                <meta name="description" content="This is the animation page of our website. Here you can find all our animation projects." />
+            </Head>
+            <div className='bg-white flex flex-col justify-between min-h-[100dvh] overflow-x-hidden'>
                 <Navbar />
-                <div className="relative flex flex-col justify-end items-center w-full pt-0 md:pt-0 mb-5 z-10">
+                <main className="relative flex flex-col justify-end items-center w-full pt-0 md:pt-0 mb-5 z-10">
                     <div className="grid grid-cols-2 gap-6 md:gap-12 p-6 md:p-16 justify-center">
                         {animationData.length > 0 ? (
                             animationData.map((sample, index) => (
@@ -30,7 +35,7 @@ const animation = () => {
                             <p>No data available</p>
                         )}
                     </div>
-                </div>
+                </main>
                 <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
                     <ProjectScroll />
                 </div>

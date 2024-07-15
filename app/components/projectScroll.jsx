@@ -6,7 +6,7 @@ export default function ProjectScroll() {
     const doubleWords = [...Object.entries(projects), ...Object.entries(projects)];
 
     return (
-        <div className="w-full flex flex-nowrap mt-4">
+        <section className="w-full flex flex-nowrap mt-4">
             <ul className="flex items-center justify-between mx-auto animate-infinite-scroll flex-shrink-0">
                 {doubleWords.map(([visualName, linkName], index) => (
                     <li key={index} className="flex-none mx-8">
@@ -25,6 +25,6 @@ export default function ProjectScroll() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }

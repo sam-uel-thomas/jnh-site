@@ -27,13 +27,15 @@ const ImageCard = ({ src, hoverSrc, alt, title, className }) => {
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
         >
-            <Image
-                src={currentSrc}
-                alt={alt}
-                width={1080}
-                height={1920}
-            />
-            <span className='mt-2 text-black text-xs md:text-base uppercase'>{title}</span>
+            <figure>
+                <Image
+                    src={currentSrc}
+                    alt={alt}
+                    width={1080}
+                    height={1920}
+                />
+                <figcaption className='mt-2 text-black text-xs md:text-base uppercase'>{title}</figcaption>
+            </figure>
         </div>
     );
 }
