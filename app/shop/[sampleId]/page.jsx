@@ -14,7 +14,7 @@ export default function Page({ params }) {
     const sample = shopData[Number(params.sampleId)];
     const [photoIndex, setPhotoIndex] = useState(0);
     const pageTitle = sample ? `Shop - ${sample.title}` : 'Shop';
-    
+
     if (!sample) {
         return <h1>No fabric sample found for id {params.sampleId}</h1>;
     }
@@ -31,11 +31,37 @@ export default function Page({ params }) {
         <>
             <Head>
                 <title>{pageTitle}</title>
-                <meta name="description" content="Detailed view of a fabric sample from our shop." />
+                <meta name="description" content={`Detailed view of ${sample.title}, a custom-made garment from our shop.`} />
                 <meta property="og:title" content={pageTitle} />
-                <meta property="og:description" content="Detailed view of a fabric sample from our shop." />
+                <meta property="og:description" content={`Detailed view of ${sample.title}, a custom-made garment from our shop.`} />
                 <meta property="og:image" content={sample ? sample.photos[photoIndex] : ''} />
                 <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://www.jonahdavies.com/shop/${params.sampleId}`} />
+                <link rel="canonical" href={`https://www.jonahdavies.com/shop/${params.sampleId}`} />
+                <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="Jonah Davies, custom garment, fashion design, bespoke fashion, unique clothing, fashion shop" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script type="application/ld+json">
+                    {`
+                        {
+                          "@context": "http://schema.org",
+                          "@type": "Product",
+                          "name": "${sample.title}",
+                          "image": "${sample.photos[photoIndex]}",
+                          "description": "${sample.description.join(' ')}",
+                          "brand": {
+                            "@type": "Person",
+                            "name": "Jonah Davies"
+                          },
+                          "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "USD",
+                            "availability": "http://schema.org/InStock",
+                            "url": "https://www.jonahdavies.com/shop/${params.sampleId}"
+                          }
+                        }
+                    `}
+                </script>
             </Head>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
@@ -46,7 +72,7 @@ export default function Page({ params }) {
                         <Image 
                             key={photoIndex} 
                             src={sample.photos[photoIndex]} 
-                            alt={sample.alt}
+                            alt={`Custom garment by Jonah Davies - ${sample.alt}`}
                             layout="responsive"
                             width={80}
                             height={83} 
@@ -55,9 +81,9 @@ export default function Page({ params }) {
                         <button onClick={handleNextPhoto} className="bg-red-500 rounded-full w-12 h-12 absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"></button>
                     </div>
                     <div className='flex flex-col w-full md:w-1/2 ml-0 md:ml-8'>
-                        <span className='text-black font-semibold text-xl md:text-4xl mb-4 md:mb-8'>{sample.title}</span>
+                        <h1 className='text-black font-semibold text-xl md:text-4xl mb-4 md:mb-8'>{sample.title}</h1>
                         {sample.description.map((desc, index) => (
-                            <span key={index} className='text-black font-semibold mb-2 md:mb-6 text-l md:text-2xl'>{desc}</span>
+                            <p key={index} className='text-black font-semibold mb-2 md:mb-6 text-l md:text-2xl'>{desc}</p>
                         ))}
                     </div>
                 </div>

@@ -53,10 +53,32 @@ const FabricSamples = () => {
                 <meta property="og:title" content="Fabric Samples" />
                 <meta property="og:description" content="Browse our collection of fabric samples." />
                 <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.jonahdavies.com/fabricSamples" />
+                <meta property="og:image" content="https://www.jonahdavies.com/images/fabric-samples-og-image.jpg" />
+                <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="Jonah Davies, fabric samples, fabric collection, bespoke fabric, artistic fabrics" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="canonical" href="https://www.jonahdavies.com/fabricSamples" />
+                <script type="application/ld+json">
+                    {`
+                        {
+                          "@context": "http://schema.org",
+                          "@type": "CollectionPage",
+                          "name": "Fabric Samples",
+                          "description": "Browse our collection of fabric samples.",
+                          "url": "https://www.jonahdavies.com/fabricSamples",
+                          "image": "https://www.jonahdavies.com/images/fabric-samples-og-image.jpg",
+                          "publisher": {
+                            "@type": "Person",
+                            "name": "Jonah Davies"
+                          }
+                        }
+                    `}
+                </script>
             </Head>
             <div className='bg-white flex flex-col min-h-screen overflow-x-hidden'>
                 <Navbar />
-                <div className=" space-y-24 md:space-y-32 mb-24">
+                <div className="space-y-24 md:space-y-32 mb-24">
                     <ArrowLink href={"/"} width={70} height={70} top={0} left={0} className="absolute md:hidden" />
                     <ArrowLink href={"/"} width={100} height={100} top={0} left={0} className="absolute hidden md:block" />
                     {rails.map((rail, railIndex) => (

@@ -6,7 +6,6 @@ import ImageCard from '../components/ImageCard'
 import ProjectScroll from '../components/ProjectScroll'
 import printsData from '../data/printsData'
 import Link from 'next/link'
-import Image from 'next/image'
 import SlidePage from '../components/SlidePage'
 import Head from 'next/head'
 
@@ -39,7 +38,6 @@ const Prints = () => {
             const newPositions = [...positions];
             const newPosition = predefinedPositions[index % predefinedPositions.length];
             newPositions[index] = { ...newPosition, transform: 'translate(-50%, -50%)' };
-            console.log(`Image ${index} moved to: left ${newPosition.left}, top ${newPosition.top}`);
             setPositions(newPositions);
 
             const newClicked = [...clicked];
@@ -51,33 +49,59 @@ const Prints = () => {
     return (
         <div>
             <Head>
-                <title>Prints</title>
-                <meta name="description" content="Explore our collection of prints." />
-                <meta property="og:title" content="Prints" />
-                <meta property="og:description" content="Explore our collection of prints." />
+                <title>Jonah Davies - Print Collection</title>
+                <meta name="description" content="Explore the unique print collection by Jonah Davies. Discover artistic expressions through bespoke prints." />
+                <meta property="og:title" content="Jonah Davies - Print Collection" />
+                <meta property="og:description" content="Explore the unique print collection by Jonah Davies. Discover artistic expressions through bespoke prints." />
                 <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.jonahdavies.com/prints" />
+                <meta property="og:image" content="https://www.jonahdavies.com/images/prints-og-image.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Jonah Davies - Print Collection" />
+                <meta name="twitter:description" content="Explore the unique print collection by Jonah Davies. Discover artistic expressions through bespoke prints." />
+                <meta name="twitter:image" content="https://www.jonahdavies.com/images/prints-og-image.jpg" />
+                <link rel="canonical" href="https://www.jonahdavies.com/prints" />
+                <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="Jonah Davies, prints, print collection, bespoke prints, artistic prints, art prints" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script type="application/ld+json">
+                    {`
+                        {
+                          "@context": "http://schema.org",
+                          "@type": "CollectionPage",
+                          "name": "Jonah Davies - Print Collection",
+                          "description": "Explore the unique print collection by Jonah Davies. Discover artistic expressions through bespoke prints.",
+                          "url": "https://www.jonahdavies.com/prints",
+                          "image": "https://www.jonahdavies.com/images/prints-og-image.jpg",
+                          "publisher": {
+                            "@type": "Person",
+                            "name": "Jonah Davies"
+                          }
+                        }
+                    `}
+                </script>
             </Head>
             <div className='bg-white flex flex-col justify-between h-screen overflow-x-hidden'>
                 <Navbar />
                 <div className="block md:hidden">
                     <SlidePage data={printsData} link={"prints"} />
                 </div>
-                    <div className="hidden md:block relative w-full h-full mt-24">
-                        {printsData.length > 0 ? (
-                            printsData.map((sample, index) => (
-                                <Link href={`/prints/${index}`} key={index}>
-                                    <div
-                                        className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[14rem]"
-                                        style={positions[index]}
-                                        onClick={(event) => handleImageClick(event, index)}
-                                    >
-                                        <ImageCard src={sample.src} alt={sample.alt} />
-                                    </div>
-                                </Link>
-                            ))
-                        ) : (
-                            <p>No data available</p>
-                        )}
+                <div className="hidden md:block relative w-full h-full mt-24">
+                    {printsData.length > 0 ? (
+                        printsData.map((sample, index) => (
+                            <Link href={`/prints/${index}`} key={index}>
+                                <div
+                                    className="absolute transition-all duration-500 ease-in-out cursor-pointer w-[14rem]"
+                                    style={positions[index]}
+                                    onClick={(event) => handleImageClick(event, index)}
+                                >
+                                    <ImageCard src={sample.src} alt={`Print by Jonah Davies - ${sample.alt}`} />
+                                </div>
+                            </Link>
+                        ))
+                    ) : (
+                        <p>No data available</p>
+                    )}
                 </div>
                 <div className="hidden md:flex relative flex-col justify-end items-center w-full mb-5 z-10">
                     <ProjectScroll />

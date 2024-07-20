@@ -10,11 +10,31 @@ const Portfolio = () => {
     return (
         <div>
             <Head>
-                <title>Portfolio</title>
-                <meta name="description" content="Explore our main and print portfolios." />
-                <meta property="og:title" content="Portfolio" />
-                <meta property="og:description" content="Explore our main and print portfolios." />
+                <title>Jonah Davies - Portfolio</title>
+                <meta name="description" content="Explore the main and print portfolios of Jonah Davies. Discover unique fashion designs and artistic prints." />
+                <meta property="og:title" content="Jonah Davies - Portfolio" />
+                <meta property="og:description" content="Explore the main and print portfolios of Jonah Davies. Discover unique fashion designs and artistic prints." />
                 <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.jonahdavies.com/portfolio" />
+                <meta property="og:image" content="https://www.jonahdavies.com/images/portfolio-og-image.jpg" />
+                <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="Jonah Davies, portfolio, fashion design, print portfolio, artistic prints, bespoke fashion" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script type="application/ld+json">
+                    {`
+                        {
+                          "@context": "http://schema.org",
+                          "@type": "WebPage",
+                          "name": "Jonah Davies - Portfolio",
+                          "description": "Explore the main and print portfolios of Jonah Davies. Discover unique fashion designs and artistic prints.",
+                          "url": "https://www.jonahdavies.com/portfolio",
+                          "publisher": {
+                            "@type": "Person",
+                            "name": "Jonah Davies"
+                          }
+                        }
+                    `}
+                </script>
             </Head>
             <div className='bg-white flex flex-col justify-between min-h-screen overflow-x-hidden'>
                 <Navbar />

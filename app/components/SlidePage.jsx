@@ -44,8 +44,6 @@ const SlidePage = ({ data, link, isImageClickable = true }) => {
       <Head>
         <title>Slide Page</title>
         <meta name="description" content="Explore our slide page with image navigation and photography credits." />
-        <meta property="og:title" content="Slide Page" />
-        <meta property="og:description" content="Explore our slide page with image navigation and photography credits." />
         <meta property="og:type" content="website" />
       </Head>
       <div className="flex flex-col px-4 items-center w-full justify-center mx-auto flex-grow md:flex-row md:items-center">
