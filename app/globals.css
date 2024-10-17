@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  cursor: url('/cursor.png') 16 16, auto;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -25,6 +26,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+a, button {
+    cursor: url('/cursorHighlight.png') 16 16, auto;
+  }
 
 @layer utilities {
   .text-balance {

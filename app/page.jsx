@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const LandingPage = () => {
     return (
-        <div className="bg-white flex flex-col justify-between relative overflow-x-hidden">
+        <div className="bg-white flex flex-col justify-between relative overflow-x-hidden min-h-screen">
             <Head>
                 <title>Jonah Davies - Fashion Designer & Artist Portfolio</title>
                 <meta name="description" content="Explore the portfolio of Jonah Davies, a renowned fashion designer and artist. Discover unique fashion designs and contemporary art pieces." />
@@ -27,26 +27,33 @@ const LandingPage = () => {
                           "@type": "WebSite",
                           "url": "https://www.jonahdavies.com/",
                           "name": "Jonah Davies - Fashion Designer & Artist Portfolio",
-                          "description": "Explore the portfolio of Jonah Davies, a renowned fashion designer and artist. Discover unique fashion designs and contemporary art pieces.",
-                          "sameAs": [
-                            "https://www.facebook.com/jonahdavies",
-                            "https://www.instagram.com/jonahdavies",
-                            "https://www.twitter.com/jonahdavies"
-                          ]
+                          "description": "Explore the portfolio of Jonah Davies, a renowned fashion designer and artist. Discover unique fashion designs and contemporary art pieces."
                         }
                     `}
                 </script>
             </Head>
-            <div className='flex flex-col justify-between h-[100dvh]'>
-                <Navbar />
-                <main className="h-full object-cover mt-4 relative">
-                    <Image src="/logos/logoAnimated.gif" alt="Jonah Davies Logo Animation" width={1000} height={1000} className="absolute w-full h-full object-contain object-center -z-2 md:hidden px-2" />
-                    <Image src="/animation/7.GIF" alt="Main Animation of Jonah Davies' Work" width={2000} height={2000} className="absolute w-full object-contain object-center -z-2 hidden md:block" />
-                </main>
-                <div className="relative flex flex-col justify-end items-center w-full mb-5 z-10">
+            <Navbar />
+            <main className="flex-grow flex flex-col justify-between">
+                <div className="relative w-full h-[calc(100vh-220px)] overflow-hidden">
+                    <Image 
+                        src="/logos/logoAnimated.gif" 
+                        alt="Jonah Davies Logo Animation" 
+                        layout="fill"
+                        objectFit="cover"
+                        className="md:hidden"
+                    />
+                    <Image 
+                        src="/background.png" 
+                        alt="Main Animation of Jonah Davies' Work" 
+                        layout="fill"
+                        objectFit="cover"
+                        className="hidden md:block"
+                    />
+                </div>
+                <div className="w-full mt-auto mb-8">
                     <ProjectScroll />
                 </div>
-            </div>
+            </main>
             <Footer />
         </div>
     );
